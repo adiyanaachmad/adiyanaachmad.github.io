@@ -1,0 +1,47 @@
+.setting-popup{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    inset: 0;
+    border-radius: var(--bs-border-radius-xl)!important;
+}
+
+.badge{   
+    align-items: center!important;
+    cursor: pointer!important;
+    position: relative; /* Needed for positioning tooltip */
+    padding: 10px; /* Add padding to give space for tooltip */
+}
+
+.colored-btn {
+    padding: 8px 20px;
+    font-size: 14px;
+    color: #fff;
+    line-height: 1.5;
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: ease all 0.3s;
+    font-weight: 600;
+    display: inline-block;
+    background: linear-gradient(45deg, #BFBEE3, #9092DA);
+    box-shadow: 6px 6px 0 -1px #19181B;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #F4F0FA;
+    border-radius: var(--bs-border-radius-xl);
+}
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.swiper-slide img {
+    max-width: 100%;
+    height: auto;
+}
