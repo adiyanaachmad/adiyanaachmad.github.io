@@ -1,0 +1,35 @@
+.service .icon{
+    display: grid;
+    align-content: center;
+    text-align: center;
+    padding-top: 15px;
+    width: 80px;
+    height: 80px;
+    color: #6923D0;
+    font-size: 50px;
+    box-shadow: inset 2px 2px 8px rgba(55, 94, 148, 0.3), inset -3px -2px 5px rgba(255, 255, 255, 0.8);
+}
+
+.border-hover{
+    transition: all 0.4s ease-out;
+    border: 2px solid transparent;
+}
+
+.border-hover:hover{
+    border-color: #6923D0;
+}
+
+p.asd{
+    text-align: justify;
+}
+
+.bg-border {
+    border-left: 5px solid #6923D0;
+    border-radius: 0px !important;
+}
+
+.badge-comp {
+    color: black;
+    position: relative;
+    font-size: 16px !important;
+}

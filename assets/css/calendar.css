@@ -1,0 +1,170 @@
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    font-weight: 500;
+}
+
+.calendar-days div:hover span:nth-child(4) {
+    transition-delay: 0.6s;
+}
+
+.calendar-days div.curr-date,
+.calendar-days div.curr-date:hover {
+    color: #F1F1F3;
+    background: #031224;
+    border-radius: 5px;
+}
+
+.calendar-days div.curr-date span {
+    display: none;
+}
+
+.calendar-days div {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    margin-bottom: 10px;
+    position: relative;
+    cursor: pointer;
+    animation: to-top 1s forwards;
+    border-radius: 5px;
+}
+
+.calendar-days div span {
+    position: absolute;
+}
+
+.calendar-days div:hover span {
+    color: #fff;
+    background: #031224;
+}
+
+.bottom-container .upcoming .calendar-grid .item.active a,
+.bottom-container .upcoming .calendar-grid .item a:hover {
+    color: #fff;
+    background: #031224;
+}
+
+.bottom-container .upcoming .events {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.bottom-container .upcoming .events .item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #eff6ff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.bottom-container .upcoming .events .item i {
+    cursor: pointer;
+}
+
+.bottom-container .upcoming .events .item div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.bottom-container .upcoming .events .item div i {
+    font-size: 20px;
+}
+
+.bottom-container .upcoming .events .item .event-info {
+    display: inline-block;
+}
+
+.bottom-container .upcoming .events .item .event-info a {
+    color: #000;
+    font-weight: 500;
+}
+
+.bottom-container .upcoming .events .item .event-info p {
+    font-size: 13px;
+    color: #9b9b9b;
+    margin-bottom: 0px;
+}
+
+.dropdown__menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    max-height: 120px; /* Batas tinggi untuk scrolling */
+    overflow-y: auto;
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown__item {
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.dropdown__item:hover {
+    background-color: #f1f1f1;
+}
+
+.show {
+    display: block;
+}
+
+.calendar-day-hover.event {
+    border-bottom: 3px solid green;
+    border-radius: 0px;
+}
+
+.calendar-day-hover.sunday {
+    color: red;
+}
+
+.event-slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.event-items {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.event-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.slider-controls button {
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+
+@keyframes to-top {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

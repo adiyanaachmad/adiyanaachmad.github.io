@@ -1,0 +1,374 @@
+canvas{
+    width: 100%!important;
+}
+
+.bottom-container{
+    display: flex;
+    gap: 20px;
+    padding: 1rem 1rem 0;
+}
+
+.bottom-container .prog-status,
+.bottom-container .popular,
+.bottom-container .upcoming{
+    background-color: var(--body-color);
+    padding: 20px;
+<<<<<<< HEAD
+    border-radius: 15px;
+=======
+    border-radius: var(--bs-border-radius-xxl);
+>>>>>>> c25671f66d04f2c4ec6cbe89da9bee247b31d212
+}
+
+.bottom-container .prog-status{
+    width: 50%;
+    overflow: hidden;
+}
+
+.bottom-container .prog-status .header-event,
+.bottom-container .popular .header-event,
+.bottom-container .upcoming .header-event{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.bottom-container .prog-status .header-event .event-judul-init,
+.bottom-container .popular .header-event .event-judul-init,
+.bottom-container .upcoming .header-event .event-judul-init{
+    font-weight: 600;
+}
+
+.bottom-container .upcoming .header-event .event-judul-init{
+    cursor: pointer;
+}
+
+.bottom-container .prog-status .header-event .tabs,
+.bottom-container .upcoming .header-event .tabs{
+    background: var(--first-color-light);
+    padding: 4px;
+    border-radius: 5px;
+    display: flex;
+    gap: 5px;
+}
+.bottom-container .upcoming .header-event .tabs{
+    cursor: pointer;
+}
+.bottom-container .prog-status .header-event .tabs a,
+.bottom-container .upcoming .header-event .tabs a{
+    padding: 4px 5px;
+    font-size: 12px;
+    color: #000;
+    font-weight: 600;
+    border-radius: 5px;
+}
+.bottom-container .upcoming .header-event .tabs a{
+    cursor: pointer;
+}
+
+.bottom-container .prog-status .header-event .tabs a.active{
+    background:  var(--body-color);
+}
+
+.bottom-container .prog-status .details{
+    display: flex;
+    margin-bottom: 30px;
+    gap: 20px;
+}
+
+.bottom-container .prog-status .details .item h2{
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.bottom-container .prog-status .details .item p{
+    font-size: 13px;
+    color: #9b9b9b;
+    margin-bottom: 0px;
+}
+
+.bottom-container .prog-status .details .separator{
+    width: 2px;
+    background: #f3f3f3;
+}
+
+.bottom-container .popular{
+    width: 25%;
+}
+
+.bottom-container .popular .header-event,
+.bottom-container .upcoming .header-event{
+    margin-bottom: 40px;
+}
+
+.bottom-container .popular .header-event a,
+.bottom-container .upcoming .header-event a{
+    font-size: 12px;
+    color: #000;
+    font-weight: 600;
+    padding: 4px 8px;
+    background: var(--first-color-light);
+    border-radius: 5px;
+}
+
+.bottom-container .popular img{
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.bottom-container .popular .user-init{
+    margin-bottom: 0px;
+}
+
+.bottom-container .popular .audio{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.bottom-container .popular .audio i{
+    font-size: 26px;
+    background: #eff6ff;
+    padding: 6px;
+    border-radius: 50%;
+}
+
+.bottom-container .popular .audio a{
+    font-size: 15px;
+    font-weight: 500;
+    color: #000;
+    line-height: 18px;
+}
+
+.bottom-container .popular p{
+    font-size: 14px;
+    font-weight: 500;
+    text-align: justify;
+}
+
+.bottom-container .popular .listen{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bottom-container .popular .listen .author{
+    padding: 6px 10px;
+    background: #f3f3f3;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: var(--bs-border-radius-xl);
+}
+
+.bottom-container .popular .listen .author img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-top: 0px;
+}
+
+.bottom-container .popular .listen .author a{
+    font-size: 14px;
+    color: #000;
+}
+
+.bottom-container .popular .listen .author .info{
+    font-size: 12px;
+    color: #9b9b9b;
+    margin-bottom: 0px;
+}
+
+.bottom-container .popular .listen button{
+    border: none;
+    color: #fff;
+    background: #031224;
+    padding: 6px 14px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.bottom-container .popular .listen button i{
+    font-size: 16px;
+}
+
+.bottom-container .upcoming {
+    width: 25%;
+    overflow: hidden;
+}
+
+.bottom-container .upcoming .calendar-container {
+    margin-bottom: 40px;
+}
+
+.bottom-container .upcoming .days-row,
+.bottom-container .upcoming .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: 10px;
+}
+
+.bottom-container .upcoming .days-row .day,
+.bottom-container .upcoming .calendar-grid .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.bottom-container .upcoming .calendar-grid .item.sunday a {
+    color: #ff0000; /* warna merah untuk hari Minggu */
+}
+
+.bottom-container .upcoming .days-row .day {
+    font-weight: bold;
+}
+
+.bottom-container .upcoming .calendar-grid .item {
+    height: 50px; /* sesuaikan tinggi tanggal */
+}
+
+.bottom-container .upcoming .calendar-grid .item a {
+    color: #000;
+    font-size: 13px;
+    padding: 5px 9px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+
+@media screen and (max-width: 1300px){
+    .bottom-container .popular .audio a{
+        font-size: 12px;
+    }
+    .bottom-container .popular p{
+        margin-bottom: 20px;
+        font-size: 12px;
+    }
+    .bottom-container .popular .listen{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .bottom-container .popular .listen .author{
+        width: 100%;
+    }
+    .bottom-container .upcoming .events .item{
+        padding: 6px 10px;
+    }
+    .bottom-container .upcoming .events .item div i{
+        font-size: 20px;
+    }
+    .bottom-container .upcoming .events .item div a{
+        font-size: 13px;
+    }
+    .bottom-container .upcoming .events .item .event-info a{
+        font-size: 11px;
+    }
+    .bottom-container .upcoming .events .item .event-info p{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 1080px){
+    .bottom-container .prog-status .nav .right-section .profile{
+        padding: 5px;
+    }
+    .bottom-container .prog-status .nav .right-section .profile .info p,
+    .bottom-container .prog-status .status .header-event .event-judul-init#small,
+    .bottom-container .prog-status .status .header-init-skill h4#small{
+        display: none;
+    }
+    .bottom-container .prog-status .status .item-list-init-skill{
+        flex-wrap: wrap;
+    }
+    .bottom-container .prog-status .status .item-list-init-skill .item-init-skill{
+        width: 48%;
+    }
+    .bottom-container{
+        flex-wrap: wrap;
+    }
+    .bottom-container .prog-status{
+        width: 100%;
+    }
+    .bottom-container .popular,
+    .bottom-container .upcoming{
+        width: 48%;
+    }
+    .bottom-container .popular .audio a{
+        font-size: 18px;
+    }
+    .bottom-container .popular p{
+        font-size: 14px;
+    }
+    .bottom-container .popular .listen{
+        flex-direction: row;
+    }
+    .bottom-container .popular .listen button{
+        width: 50%;
+    }
+    .bottom-container .upcoming .events .item{
+        padding: 10px;
+    }
+    .bottom-container .upcoming .events .item div i{
+        font-size: 30px;
+    }
+    .bottom-container .upcoming .events .item .event-info a{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .bottom-container .prog-status .nav{
+        flex-direction: column;
+        gap: 15px;
+    }
+    .bottom-container .upcoming .events .item .event-info a{
+        font-size: 15px;
+    }
+    .bottom-container .prog-status .details .item h2{
+        font-size: 18px;
+    }
+    .bottom-container .prog-status .status .item-list-init-skill .item-init-skill .info h5{
+        font-size: 15px;
+    }
+    .bottom-container .popular,
+    .bottom-container .upcoming{
+        width: 100%;
+    }
+    .banner-wrapper {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 430px){
+    .bottom-container .prog-status .status .item-list-init-skill{
+        flex-wrap: wrap;
+        zoom: .7;
+    }
+}
+
+@media screen and (max-width: 390px){
+    .bottom-container .prog-status .details .item h2 {
+        font-size: 16px;
+    }
+    .banner-wrapper {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+    .bottom-container .upcoming .events .item .event-info a {
+        font-size: 13px;
+    }
+    .bottom-container .popular .audio a{
+        font-size: 16px;
+    }
+}

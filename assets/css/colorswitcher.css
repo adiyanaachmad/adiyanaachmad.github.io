@@ -1,0 +1,55 @@
+.colors .color-1.active{
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #ec1839;
+}
+.colors .color-1{
+  background: #ec1839;
+}
+.colors .color-2{
+  background: #DD8808;
+}
+.colors .color-2.active{
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #DD8808;
+}
+.colors .color-3{
+  background: #3A9943;
+}
+.colors .color-3.active{
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #3A9943;
+}
+.colors .color-4{
+  background: #1854b4;
+}
+.colors .color-4.active{
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #1854b4;
+}
+.colors .color-5{
+  background: #f021b2;
+}
+.colors .color-5.active{
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #f021b2;
+}
+.colors .color-6{
+  background: #8e44ad;
+}
+.colors .color-6.active{
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #8e44ad;
+}
+.colors .color-7{
+  background: #fefefe;
+}
+.colors .color-7.active{
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #fefefe;
+}
+.colors span{
+  position: relative;
+  display: inline-block;
+  height: 40px;
+  left: 15px;
+  width: 40px;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: box-shadow .5s ease;
+  margin: 5px 2px;
+}

@@ -1,0 +1,18 @@
+section.quote{
+    background-image: url('../img/tranquil-summer-sunset-mountain-silhouette-generated-by-ai.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: var(--body-color);
+    font-size: 25px;
+    font-style: italic;
+    padding: 100px;
+}
+section.quote .layar-dalam p{
+    display: inline;
+    background: url('../img/quote-icon.png');
+    background-repeat: no-repeat;
+    padding: 40px;
+}
