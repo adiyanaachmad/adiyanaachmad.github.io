@@ -137,12 +137,6 @@
     gap: 14px;
 }
 
-.bottom-container-skill-ui .upcoming-ui .item-init-skill{
-    background: #f1f3f2;
-    padding: 10px;
-    border-radius: 10px;
-}
-
 .bottom-container-skill-ui .prog-status-skill-ui .status .item-list-init-skill .item-init-skill{
     background: #e0f2fe;
     width: 25%;
@@ -309,12 +303,6 @@
     .bottom-container-skill-ui .upcoming-ui{
         width: 100%;
         height: 450px;
-    }
-}
-
-@media screen and (max-width: 450px){
-    .bottom-container-skill-ui .prog-status-skill-ui .status .item-list-init-skill{
-        zoom: .7;
     }
 }
 
