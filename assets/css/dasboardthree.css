@@ -13,11 +13,7 @@ canvas{
 .bottom-container .upcoming{
     background-color: var(--body-color);
     padding: 20px;
-<<<<<<< HEAD
     border-radius: 15px;
-=======
-    border-radius: var(--bs-border-radius-xxl);
->>>>>>> c25671f66d04f2c4ec6cbe89da9bee247b31d212
 }
 
 .bottom-container .prog-status{
