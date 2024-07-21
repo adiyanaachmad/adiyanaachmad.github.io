@@ -17,6 +17,10 @@ canvas{
 }
 
 .bottom-container .prog-status{
+    padding: 20px 0;
+}
+
+.bottom-container .prog-status{
     width: 50%;
     overflow: hidden;
 }
@@ -341,8 +345,8 @@ canvas{
         width: 100%;
     }
     .banner-wrapper {
-        padding-right: 0.5rem;
-        padding-left: 0.5rem;
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
     }
 }
 
@@ -358,8 +362,8 @@ canvas{
         font-size: 16px;
     }
     .banner-wrapper {
-        padding-right: 0.5rem;
-        padding-left: 0.5rem;
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
     }
     .bottom-container .upcoming .events .item .event-info a {
         font-size: 13px;

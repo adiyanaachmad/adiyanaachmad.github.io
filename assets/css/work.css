@@ -60,6 +60,10 @@
 }
 
 .bottom-container-skill-ui .prog-status-skill-ui{
+    padding: 20px 0;
+}
+
+.bottom-container-skill-ui .prog-status-skill-ui{
     width: 80%;
     overflow: hidden;
 }
