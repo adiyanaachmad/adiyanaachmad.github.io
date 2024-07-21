@@ -306,6 +306,12 @@
     }
 }
 
+@media screen and (max-width: 450px){
+    .bottom-container-skill-ui .prog-status-skill-ui .status .item-list-init-skill{
+        zoom: .8;
+    }
+}
+
 @media screen and (max-width: 768px){
     .bottom-container-skill-ui .prog-status-skill-ui,
     .bottom-container-skill-ui .upcoming-ui{
