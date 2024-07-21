@@ -353,7 +353,6 @@ canvas{
 @media screen and (max-width: 430px){
     .bottom-container .prog-status .status .item-list-init-skill{
         flex-wrap: wrap;
-        zoom: .7;
     }
 }
 
