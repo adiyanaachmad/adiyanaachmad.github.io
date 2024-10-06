@@ -1018,6 +1018,9 @@ body.dark-theme{
 
 /* For large devices */
 @media screen and (min-width: 1150px){
+  .active-link{
+    color: var(--title-color);
+  }
   .container{
     margin-inline: auto;
   }
@@ -1033,7 +1036,7 @@ body.dark-theme{
     transform: scale(1.2);
   }
   .nav{
-    height: calc(var(--header-height) + 2rem);
+    height: calc(var(--header-height) + 1rem);
     column-gap: 4rem;
   }
   .nav-close,
