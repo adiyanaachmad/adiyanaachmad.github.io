@@ -375,6 +375,15 @@
       <i class="ri-arrow-up-s-line"></i>
    </a>
 
+   <!--========== ZOOM ==========-->
+   <div class="zoom-controls" id="zoomControls">
+      <span>ZOOM</span>
+      <div class="zoom-btn" onclick="zoomOut()">−</div>
+      <span id="zoomLevel">100%</span>
+      <div class="zoom-btn" onclick="zoomIn()">+</div>
+      <a class="zoom-reset" href="javascript:resetZoom()">RESET</a>
+   </div>
+
    <!--=============== SCROLLREVEAL ===============-->
    <script src=""></script>
 
@@ -383,6 +392,39 @@
 
    <!--=============== MAIN JS ===============-->
    <script src="assets/js/main.js"></script>
+
+   <script>
+      let zoomLevel = 100;
+
+      function zoomIn() {
+      if (zoomLevel < 200) { 
+         zoomLevel += 10;
+         applyZoom();
+      }
+      }
+
+      function zoomOut() {
+         if (zoomLevel > 25) { 
+            zoomLevel -= 10;
+            applyZoom();
+         }
+      }
+
+      function resetZoom() {
+         zoomLevel = 100; 
+         applyZoom();
+      }
+
+      function applyZoom() {
+         document.body.style.zoom = `${zoomLevel}%`;
+         document.getElementById('zoomLevel').innerText = `${zoomLevel}%`;
+      }
+
+      function toggleZoomControls() {
+         const zoomControls = document.getElementById('zoomControls');
+         zoomControls.style.display = zoomControls.style.display === 'flex' ? 'none' : 'flex';
+      }
+   </script>
 </body>
 
 </html>
