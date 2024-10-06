@@ -1093,7 +1093,8 @@ body.dark-theme{
     text-align: initial;
   }
   .home-name{
-    align-self: flex-end;
+    align-self: flex-end; 
+    font-size: 3rem;
   }
   .home-info{
     margin-top: 0;
