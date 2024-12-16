@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!--=============== FAVICON ===============-->
+   <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+   <!--=============== REMIXICONS ===============-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.6.0/remixicon.css">
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+   <!--=============== BASE ===============-->
+   <link rel="stylesheet" href="assets/css/styles.css">
+
+
+   <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.1/css/all.css">
+
+   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.1/css/sharp-duotone-solid.css">
+
+   <title>Personal Porfolio</title>
+</head>
+
+<body>
+   <!--==================== HEADER ====================-->
+   <header class="header" id="header">
+      <nav class="nav container">
+         <a href="" class="nav-logo">
+            <span>Adiyana</span>
+            <span>Achmad</span>
+         </a>
+         <div class="nav-menu" id="nav-menu">
+            <ul class="nav-list">
+               <li class="nav-item">
+                  <a href="#home" class="nav-link active-link">
+                     <span>01</span> Home
+                  </a>
+               </li>
+               <li class="nav-item">
+                  <a href="#about" class="nav-link">
+                     <span>02</span> About
+                  </a>
+               </li>
+               <li class="nav-item">
+                  <a href="#service" class="nav-link">
+                     <span>03</span> Services
+                  </a>
+               </li>
+               <li class="nav-item">
+                  <a href="#projects" class="nav-link">
+                     <span>04</span> Projects
+                  </a>
+               </li>
+            </ul>
+            <div class="nav-buttons">
+               <div class="nav-notification">
+                  <img src="assets/img/clouds.svg" alt="image" class="nav-bell">
+                  <!-- <div class="nav-circle">2</div> -->
+               </div>
+               <a href="#" class="button button-dark">Contact Me</a>
+            </div>
+            <div class="nav-close" id="nav-close">
+               <i class="ri-close-fill"></i>
+            </div>
+         </div>
+         <div class="nav-toggle" id="nav-toggle">
+            <i class="ri-menu-4-line"></i>
+         </div>
+      </nav>
+   </header>
+
+   <!--==================== MAIN ====================-->
+   <main class="main">
+      <div class="container">
+         <div class="container-weather">
+            <div class="search-section">
+               <button class="close-container">
+                  <span><i class="ri-close-line"></i></span>
+              </button>
+                <div class="input-wrapper">
+                    <span><i class="ri-search-2-line"></i></span>
+                    <input type="search" placeholder="Enter a city name" class="search-input">
+                </div>
+                <button class="location-button">
+                    <span><i class="ri-focus-3-line"></i></span>
+                </button>
+            </div>
+            <div class="no-search">
+               <img src="assets/img/clouds.svg" class="weather-icon" alt="Weather Icon">
+               <h3 class="title">Welcome to Weather App!</h3>
+               <p class="message">Please search for a city to get weather details.</p>
+           </div>
+            <div class="no-results">
+                <img src="assets/img/no-result.svg" class="weather-icon" alt="Weather Icon">
+                <h3 class="title">Something went wrong!</h3>
+                <p class="message">we're unable to retrieve the weather details. Enure you've entered a valid city or try again later</p>
+            </div>
+            <div class="weather-section">
+               <div class="weather-info">
+                  <div class="location-date-container">
+                     <div class="location-name">
+                        <i class="ri-map-pin-fill"></i>
+                        <h4 class="country-txt">--------</h4>
+                     </div>
+                     <h4 class="current-date-txt">--------</h4>
+                  </div>
+               </div>
+                <div class="current-weather">
+                    <img src="assets/img/no-result.svg" class="weather-icon" alt="Weather Icon">
+                    <div class="info-aja">
+                     <h2 class="temperatur">--<sup>°C</sup></h2>
+                     <p class="description">Search City</p>
+                    </div>
+                </div>
+                <div class="hourly-weather">
+                    <ul class="weather-list">
+                     <li class="weather-item">
+                        <p class="time">00:00</p>
+                        <img src="assets/img/clouds.svg" alt="" class="weather-icon">
+                        <p class="temperatur">20°</p>
+                     </li>
+                     <li class="weather-item">
+                        <p class="time">00:00</p>
+                        <img src="assets/img/clouds.svg" alt="" class="weather-icon">
+                        <p class="temperatur">20°</p>
+                     </li>
+                     <li class="weather-item">
+                        <p class="time">00:00</p>
+                        <img src="assets/img/clouds.svg" alt="" class="weather-icon">
+                        <p class="temperatur">20°</p>
+                     </li>
+                     <li class="weather-item">
+                        <p class="time">00:00</p>
+                        <img src="assets/img/clouds.svg" alt="" class="weather-icon">
+                        <p class="temperatur">20°</p>
+                     </li>
+                     <li class="weather-item">
+                        <p class="time">00:00</p>
+                        <img src="assets/img/clouds.svg" alt="" class="weather-icon">
+                        <p class="temperatur">20°</p>
+                     </li>
+                     <li class="weather-item">
+                        <p class="time">00:00</p>
+                        <img src="assets/img/clouds.svg" alt="" class="weather-icon">
+                        <p class="temperatur">20°</p>
+                     </li>
+                    </ul>
+                </div>
+                <div class="conditional-container">
+                  <ul>
+                     <li>
+                        <span>Clouds</span>
+                        <div>
+                           <i class="fa-solid fa-cloud"></i>
+                        </div>
+                        <span>98</span>%
+                     </li>
+                     <li>
+                        <span>Humidity</span>
+                        <div>
+                           <i class="fa-solid fa-droplet"></i>
+                        </div>
+                        <span>98</span>%
+                     </li>
+                     <li>
+                        <span>Pressure</span>
+                        <div>
+                           <i class="fa-solid fa-gauge"></i>
+                        </div>
+                        <span>1001</span>hPa
+                     </li>
+                  </ul>
+                </div>
+                <div class="sunrise-sunset-container">
+                  <ul>
+                     <li>
+                        <span>Sunrise</span>
+                        <div>
+                           <i class="fa-solid fa-sun-haze"></i>
+                        </div>
+                        <span>05.34</span>
+                     </li>
+                     <li>
+                        <span>Sunset</span>
+                        <div>
+                           <i class="fa-sharp-duotone fa-solid fa-sun-haze"></i>
+                        </div>
+                        <span>18.03</span>
+                     </li>
+                  </ul>
+                </div>
+                <!-- <div class="conditional-situation">
+                  <ul>
+                     <li>
+                        <span>Wind</span>
+                        <div>
+                           <i class="fa-solid fa-sun-haze"></i>
+                        </div>
+                        <span>05.34</span>
+                     </li>
+                     <li>
+                        <span>Visibility</span>
+                        <div>
+                           <i class="fa-sharp-duotone fa-solid fa-sun-haze"></i>
+                        </div>
+                        <span>18.03</span>
+                     </li>
+                     <li>
+                        <span>Indeks UV</span>
+                        <div>
+                           <i class="fa-sharp-duotone fa-solid fa-sun-haze"></i>
+                        </div>
+                        <span>18.03</span>
+                     </li>
+                  </ul>
+                </div> -->
+                <div class="weather-info-support">
+                  <div class="support-name">
+                     <div class="support-api">
+                        <!-- <i class="ri-map-pin-2-line"></i> -->
+                        <h4 class="country-txt">Powered By</h4>
+                     </div>
+                     <img src="assets/img/openweather.png" alt="" class="img-support">
+                  </div>
+               </div>
+            </div>
+        </div>
+      </div>
+      <!--==================== HOME ====================-->
+      <section class="home" id="home">
+         <div class="home-container container">
+            <img src="assets/img/eds.png" alt="image" class="home-img">
+            <div class="home-data">
+               <div>
+                  <h1 class="home-title" id="title-data">
+                     Discover
+                     <!-- <div class="home-number" id="number-data">03</div> -->
+                     <div class="home-text" id="text-data">Possibilities</div>
+                     In My Portfolio
+                  </h1>
+                  <h1 class="home-title" id="msg-christmas"></h1>
+               </div>
+               <p class="home-description">
+                  Hi there! Thanks for visiting my portfolio. Take a look around and see what I’ve been working on!
+               </p>
+               <a href="" class="button">Explore My Work</a>
+            </div>
+            <img src="assets/img/bell.png" alt="image" class="home-bell">
+            <img src="assets/img/star.png" alt="image" class="home-star">
+            <div class="home-blob"></div>
+         </div>
+      </section>
+
+      <section class="about" id="about">
+         <div class="about-container container">
+            <div class="perfil-image">
+               <img src="assets/img/about-2.png" alt="" class="perfil-img">
+               <div class="perfil-data">
+                  <h1 class="perfil-name">Adiyana <br> Achmad</h1>
+                  <div class="perfil-button">
+                     <a href="" class="button">Project</a>
+                     <a href="" class="button button-dark">Services</a>
+                  </div>
+               </div>
+            </div>
+            <div class="about-info">
+               <div class="info-data">
+                  <div class="info-circle"></div>
+                  <h1 class="info-name">Adiyana</h1>
+               </div>
+               <div class="info-image">
+                  <img src="assets/img/about-1.png" alt="" class="info-img">
+               </div>
+               <p class="info-description">
+                  Passionate about creating and designing websites with the best engaging interfaces.
+               </p>
+               <a href="" class="button info-button">Download CV</a>
+            </div>
+
+            <div class="tentang">
+               <h3 class="tentang-name">
+                  Adiyana - <b>Web Designer & Developer</b>
+               </h3>
+               <p class="tentang-description">
+                  Located in Indonesia, I have several years of experience in web development and design, carrying out
+                  several successful projects.
+               </p>
+               <div class="tentang-social">
+                  <a href="" class="tentang-link">
+                     <i class="ri-linkedin-fill"></i>
+                  </a>
+                  <a href="" class="tentang-link">
+                     <i class="ri-youtube-fill"></i>
+                  </a>
+                  <a href="" class="tentang-link">
+                     <i class="ri-instagram-fill"></i>
+                  </a>
+               </div>
+               <div class="tentang-image">
+                  <img src="assets/img/about-3.png" alt="" class="tentang-img">
+               </div>
+               <p class="tentang-note">
+                  He doesn't write messages on social networks, send me an email and I'll answer you.
+               </p>
+               <a href="" class="button tentang-button">Contact Me</a>
+            </div>
+            <div class="skills">
+               <h2 class="skills-title">Skills</h2>
+               <div class="skills-items">
+                  <img src="assets/img/skills-html.svg" alt="" class="skills-item">
+                  <img src="assets/img/skills-css.svg" alt="" class="skills-item">
+                  <img src="assets/img/skills-javascript.svg" alt="" class="skills-item">
+                  <img src="assets/img/skills-react.svg" alt="" class="skills-item">
+                  <img src="assets/img/skills-git.svg" alt="" class="skills-item">
+                  <img src="assets/img/skills-github.svg" alt="" class="skills-item">
+                  <img src="assets/img/skills-figma.svg" alt="" class="skills-item">
+                  <img src="assets/img/skills-photoshop.svg" alt="" class="skills-item">
+                  <img src="assets/img/skills-tailwind-css.svg" alt="" class="skills-item">
+                  <img src="assets/img/skills-sass.svg" alt="" class="skills-item">
+               </div>
+               <p class="skill-description">
+                  Visit the projects section to see the work done with these web technologies.
+               </p>
+            </div>
+            <div class="home-blob-se"></div>
+         </div>
+      </section>
+
+      <section class="services" id="service">
+         <div class="services-container container">
+            <article class="services-card">
+               <div class="services-icon">
+                  <div class="services-circle"></div>
+                  <i class="ri-layout-4-line"></i>
+               </div>
+               <h3 class="services-name">
+                  Web Design
+               </h3>
+               <p class="services-description">
+                  Beautiful and elegant designs with
+                  interfaces that are intuitive, efficient
+                  and pleasant to use for the user.
+               </p>
+            </article>
+            <article class="services-card">
+               <div class="services-icon">
+                  <div class="services-circle"></div>
+                  <i class="ri-code-s-slash-line"></i>
+               </div>
+               <h3 class="services-name">
+                  Development
+               </h3>
+               <p class="services-description">
+                  Custom web development tailored to your
+                  specifications, designed to provide a
+                  flawless user experience.
+               </p>
+            </article>
+            <article class="services-card">
+               <div class="services-icon">
+                  <div class="services-circle"></div>
+                  <i class="ri-smartphone-line"></i>
+               </div>
+               <h3 class="services-name">
+                  Mobile App
+               </h3>
+               <p class="services-description">
+                  Design and transform website projects
+                  into mobile apps to provide a seamless
+                  user experience.
+               </p>
+            </article>
+         </div>
+      </section>
+
+      <section class="services" id="projects">
+         <div class="services-container container work-cc">
+            <article class="services-card card-work" data-swiper="card1">
+               <div class="header-event">
+                  <h4 class="event-judul-init">3D Design</h4>
+                  <a href="#">#LowPoly</a>
+                </div>
+               <div class="projects-image">
+                  <div class="swiper mySwiper">
+                     <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                           <img src="assets/3D Resolution 800px/balon udara 800-800.png" alt="image-1"
+                              class="projects-img">
+                        </div>
+                        <div class="swiper-slide">
+                           <img src="assets/3D Resolution 800px/balon udara 800-800 bts.png" alt="image-2"
+                              class="projects-img">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="weekly">
+                  <div class="title">
+                    <div class="line"></div>
+                    <h5>Hot Air Ballon</h5>
+                  </div>
+                  <div class="indicator">
+                    <h3 class="angka">1/2</h3>
+                  </div>
+                </div>
+               <!-- <h3 class="services-name">
+                  Web Design
+               </h3> -->
+               <!-- <p class="services-description">
+                  Beautiful and elegant designs with
+                  interfaces that are intuitive, efficient
+                  and pleasant to use for the user.
+               </p> -->
+            </article>
+            <article class="services-card card-work" data-swiper="card2">
+               <div class="header-event">
+                  <h4 class="event-judul-init">3D Design</h4>
+                  <a href="#">#LowPoly</a>
+                </div>
+               <div class="projects-image">
+                  <div class="swiper mySwiper">
+                     <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                           <img src="assets/3D Resolution 800px/MELOMNNK.png" alt="image-1"
+                              class="projects-img">
+                        </div>
+                        <div class="swiper-slide">
+                           <img src="assets/3D Resolution 800px/MELOMN.png" alt="image-2"
+                              class="projects-img">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="weekly">
+                  <div class="title">
+                    <div class="line"></div>
+                    <h5>Camping Van</h5>
+                  </div>
+                  <div class="indicator">
+                    <h3 class="angka">1/2</h3>
+                  </div>
+                </div>
+               <!-- <h3 class="services-name">
+                  Development
+               </h3> -->
+               <!-- <p class="services-description">
+                  Custom web development tailored to your
+                  specifications, designed to provide a
+                  flawless user experience.
+               </p> -->
+            </article>
+            <article class="services-card card-work" data-swiper="card3">
+               <div class="header-event">
+                  <h4 class="event-judul-init">3D Design</h4>
+                  <a href="#">#LowPoly</a>
+                </div>
+               <div class="projects-image">
+                  <div class="swiper mySwiper">
+                     <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                           <img src="assets/3D Resolution 800px/living 800-800.png" alt="image-1"
+                              class="projects-img">
+                        </div>
+                        <div class="swiper-slide">
+                           <img src="assets/3D Resolution 800px/living 800-800 bts.png" alt="image-2"
+                              class="projects-img">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="weekly">
+                  <div class="title">
+                    <div class="line"></div>
+                    <h5>Living Room</h5>
+                  </div>
+                  <div class="indicator">
+                    <h3 class="angka">1/2</h3>
+                  </div>
+                </div>
+               <!-- <h3 class="services-name">
+                  Mobile App
+               </h3> -->
+               <!-- <p class="services-description">
+                  Design and transform website projects
+                  into mobile apps to provide a seamless
+                  user experience.
+               </p> -->
+            </article>
+            <article class="services-card card-work" data-swiper="card4">
+               <div class="header-event">
+                  <h4 class="event-judul-init">3D Design</h4>
+                  <a href="#">#LowPoly</a>
+                </div>
+               <div class="projects-image">
+                  <div class="swiper mySwiper">
+                     <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                           <img src="assets/3D Resolution 800px/Cute Character 800-800.png" alt="image-1"
+                              class="projects-img">
+                        </div>
+                        <div class="swiper-slide">
+                           <img src="assets/3D Resolution 800px/Cute Character 800-800 bts.png" alt="image-2"
+                              class="projects-img">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="weekly">
+                  <div class="title">
+                    <div class="line"></div>
+                    <h5>Cute Character</h5>
+                  </div>
+                  <div class="indicator">
+                    <h3 class="angka">1/2</h3>
+                  </div>
+                </div>
+               <!-- <h3 class="services-name">
+                  Mobile App
+               </h3> -->
+               <!-- <p class="services-description">
+                  Design and transform website projects
+                  into mobile apps to provide a seamless
+                  user experience.
+               </p> -->
+            </article>
+            <article class="services-card card-work" data-swiper="card5">
+               <div class="header-event">
+                  <h4 class="event-judul-init">3D Design</h4>
+                  <a href="#">#LowPoly</a>
+                </div>
+               <div class="projects-image">
+                  <div class="swiper mySwiper">
+                     <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                           <img src="assets/3D Resolution 800px/backpack 800-800.png" alt="image-1"
+                              class="projects-img">
+                        </div>
+                        <div class="swiper-slide">
+                           <img src="assets/3D Resolution 800px/backpack 800-800 bts.png" alt="image-2"
+                              class="projects-img">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="weekly">
+                  <div class="title">
+                    <div class="line"></div>
+                    <h5>Backpack</h5>
+                  </div>
+                  <div class="indicator">
+                    <h3 class="angka">1/2</h3>
+                  </div>
+                </div>
+               <!-- <h3 class="services-name">
+                  Mobile App
+               </h3> -->
+               <!-- <p class="services-description">
+                  Design and transform website projects
+                  into mobile apps to provide a seamless
+                  user experience.
+               </p> -->
+            </article>
+            <article class="services-card card-work" data-swiper="card6">
+               <div class="header-event">
+                  <h4 class="event-judul-init">3D Design</h4>
+                  <a href="#">#LowPoly</a>
+                </div>
+               <div class="projects-image">
+                  <div class="swiper mySwiper">
+                     <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                           <img src="assets/3D Resolution 800px/Game Console 800-800.png" alt="image-1"
+                              class="projects-img">
+                        </div>
+                        <div class="swiper-slide">
+                           <img src="assets/3D Resolution 800px/Game Console 800-800 bts.png" alt="image-2"
+                              class="projects-img">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="weekly">
+                  <div class="title">
+                    <div class="line"></div>
+                    <h5>Game Console</h5>
+                  </div>
+                  <div class="indicator">
+                    <h3 class="angka">1/2</h3>
+                  </div>
+                </div>
+               <!-- <h3 class="services-name">
+                  Mobile App
+               </h3> -->
+               <!-- <p class="services-description">
+                  Design and transform website projects
+                  into mobile apps to provide a seamless
+                  user experience.
+               </p> -->
+            </article>
+            <div class="home-blob-se-2"></div>
+         </div>
+      </section>
+
+
+   </main>
+
+   <footer class="footer">
+      <div class="footer-container container">
+         <ul class="footer-links">
+            <li>
+               <a href="#about" class="footer-link">About</a>
+            </li>
+            <li>
+               <a href="#services" class="footer-link">Services</a>
+            </li>
+            <li>
+               <a href="#projects" class="footer-link">Projects</a>
+            </li>
+         </ul>
+         <span class="footer-copy">
+            &#169; 2024 Personal Porfolio
+            <a href="">V - 5.0.0 - BETA VERSION</a>
+         </span>
+      </div>
+   </footer>
+
+   <a href="#home" class="scrollup" id="scroll-up">
+      <i class="ri-arrow-up-s-line"></i>
+   </a>
+
+   <!-- <div class="snowflakes" aria-hidden="true">
+      <div class="snowflake">
+         <div class="inner">•</div>
+      </div>
+      <div class="snowflake">
+         <div class="inner">•</div>
+      </div>
+      <div class="snowflake">
+         <div class="inner">•</div>
+      </div>
+      <div class="snowflake">
+         <div class="inner">•</div>
+      </div>
+      <div class="snowflake">
+         <div class="inner">•</div>
+      </div>
+      <div class="snowflake">
+         <div class="inner">•</div>
+      </div>
+      <div class="snowflake">
+         <div class="inner">•</div>
+      </div>
+      <div class="snowflake">
+         <div class="inner">•</div>
+      </div>
+      <div class="snowflake">
+         <div class="inner">•</div>
+      </div>
+      <div class="snowflake">
+         <div class="inner">•</div>
+      </div>
+      <div class="snowflake">
+         <div class="inner">•</div>
+      </div>
+      <div class="snowflake">
+         <div class="inner">•</div>
+      </div>
+   </div> -->
+
+   <!--=============== SNOW JS ===============-->
+
+
+   <!--=============== MAIN JS ===============-->
+   <script src="assets/js/main.js"></script>
+   <script src="assets/js/swiper-bundle.min.js"></script>
+   <script>
+      // Pastikan elemen-elemen sudah ada di dalam HTML sebelum script dijalankan
+      document.addEventListener("DOMContentLoaded", function () {
+         // Ambil elemen nav-notification dan container-weather
+         const navNotification = document.querySelector(".nav-notification");
+         const containerWeather = document.querySelector(".container-weather");
+         const closeContainer = document.querySelector(".close-container");
+
+         // Set awal posisi container-weather agar tersembunyi
+         containerWeather.style.right = "-100%";
+
+         // Tambahkan event listener untuk nav-notification
+         navNotification.addEventListener("click", function () {
+            // Toggle posisi container-weather
+            if (containerWeather.style.right === "0px") {
+                  containerWeather.style.right = "-100%"; // Sembunyikan
+            } else {
+                  containerWeather.style.right = "0px"; // Tampilkan
+            }
+         });
+
+         // Tambahkan event listener untuk close-container
+         closeContainer.addEventListener("click", function () {
+            containerWeather.style.right = "-100%"; // Sembunyikan
+         });
+      });
+
+      const searchInput = document.querySelector(".search-input");
+      const currentWeatherDiv = document.querySelector(".current-weather");
+      const hourlyWeatherDiv = document.querySelector(".hourly-weather .weather-list");
+      const locationButton = document.querySelector(".location-button");
+      const locationNameEl = document.querySelector(".country-txt"); // Ambil elemen nama kota
+      const currentDateEl = document.querySelector(".current-date-txt"); // Ambil elemen tanggal
+      const cloud = document.querySelector(".clouds");
+      const humidity = document.querySelector(".humidity");
+      const pressure = document.querySelector(".pressure");
+
+      const API_KEY = "c2e9c10120434557b9b122239241708";
+
+      const weatherCodes = {
+         clear: [1000],
+         clouds: [1003, 1006, 1009],
+         mist: [1030, 1135, 1147],
+         rain: [1063, 1150, 1153, 1168, 1171, 1180, 1183, 1198, 1201, 1240, 1243, 1246, 1273, 1276],
+         moderate_heavy_rain: [1186, 1189, 1192, 1195, 1243, 1246],
+         snow: [1066, 1069, 1672, 1114, 1117, 1204, 1207, 1210, 1213, 1216, 1219, 1222, 1225, 1237, 1249, 1252, 1255, 1258, 1261, 1264, 1279, 1282],
+         thunder: [1087, 1279, 1282],
+         thunder_rain: [1273, 1276],
+      };
+
+      const formatDate = (dateString) => {
+         const options = { weekday: "short", day: "2-digit", month: "short" };
+         return new Date(dateString).toLocaleDateString("en-US", options);
+      };
+
+      const displayHourlyForecast = (hourlyData) => {
+         const currentHour = new Date().setMinutes(0, 0, 0);
+         const next24Hours = currentHour + 24 * 60 * 60 * 1000;
+
+         const next24HoursData = hourlyData.filter(({ time }) => {
+            const forecastTime = new Date(time).getTime();
+            return forecastTime >= currentHour && forecastTime <= next24Hours;
+         });
+
+         hourlyWeatherDiv.innerHTML = next24HoursData.map(item => {
+            const temperature = Math.floor(item.temp_c);
+            const time = item.time.split(" ")[1].substring(0, 5);
+            const weatherIcon = Object.keys(weatherCodes).find(icon => weatherCodes[icon].includes(item.condition.code)) || "default";
+
+            return `<li class="weather-item">
+                        <p class="time">${time}</p>
+                        <img src="assets/img/${weatherIcon}.svg" class="weather-icon" alt="">
+                        <p class="temperatur">${temperature}°</p>
+                     </li>`;
+         }).join("");
+      };
+
+      const showInitialScreen = () => {
+         document.body.classList.add("show-no-search");
+      };
+
+      const hideInitialScreen = () => {
+         document.body.classList.remove("show-no-search");
+      };
+
+      window.addEventListener("DOMContentLoaded", () => {
+         showInitialScreen();
+      });
+
+      const displayConditionalData = (data) => {
+      const cloud = data.current?.cloud ?? "--";
+      const humidity = data.current?.humidity ?? "--";
+      const pressure = data.current?.pressure_mb ?? "--";
+
+      const conditionalContainer = document.querySelector(".conditional-container ul");
+      if (conditionalContainer) { // Pastikan elemen ada sebelum mengubah isinya
+         conditionalContainer.innerHTML = `
+            <li>
+               <span>Clouds</span>
+               <div><i class="fa-solid fa-cloud"></i></div>
+               <span>${cloud}</span>% <!-- Persentase awan -->
+            </li>
+            <li>
+               <span>Humidity</span>
+               <div><i class="fa-solid fa-droplet"></i></div>
+               <span>${humidity}</span>% <!-- Persentase kelembapan -->
+            </li>
+            <li>
+               <span>Pressure</span>
+               <div><i class="fa-solid fa-gauge"></i></div>
+               <span>${pressure}</span> hPa <!-- Tekanan udara dalam hPa -->
+            </li>
+         `;
+      } else {
+         console.error("Conditional container not found in the DOM.");
+      }
+      };
+
+      const displaySunriseSunset = (data) => {
+      // Ambil elemen sunrise-sunset-container
+      const sunriseSunsetContainer = document.querySelector(".sunrise-sunset-container ul");
+
+      // Pastikan elemen ada sebelum mengubah isinya
+      if (sunriseSunsetContainer) {
+         const sunriseTime = data.forecast.forecastday[0].astro.sunrise || "--:--";
+         const sunsetTime = data.forecast.forecastday[0].astro.sunset || "--:--";
+
+         // Isi ulang data Sunrise dan Sunset
+         sunriseSunsetContainer.innerHTML = `
+            <li>
+               <span>Sunrise</span>
+               <div>
+                  <i class="fa-solid fa-sun-haze"></i>
+               </div>
+               <span>${sunriseTime}</span>
+            </li>
+            <li>
+               <span>Sunset</span>
+               <div>
+                  <i class="fa-sharp-duotone fa-solid fa-sun-haze"></i>
+               </div>
+               <span>${sunsetTime}</span>
+            </li>
+         `;
+      } else {
+         console.error("Sunrise and Sunset container not found in the DOM.");
+      }
+   };
+
+      const getWeatherDetails = async (API_URL) => {
+      // Pastikan class "no-search" dan "no-results" sesuai dengan kondisi
+      document.body.classList.remove("show-no-search");
+      document.body.classList.remove("show-no-results");
+
+      try {
+         const response = await fetch(API_URL);
+         if (!response.ok) {
+            throw new Error("City not found");
+         }
+
+         const data = await response.json();
+
+         // Set nama kota
+         locationNameEl.innerText = data.location.name || "Unknown";
+
+         // Set tanggal real-time
+         currentDateEl.innerText = formatDate(data.location.localtime);
+
+         // Panggil fungsi ini untuk menampilkan conditional data
+         displayConditionalData(data);
+
+         displaySunriseSunset(data);
+
+         const temperature = Math.floor(data.current?.temp_c || 0);
+         const description = data.current?.condition?.text || "Unknown";
+         const weatherIcon = Object.keys(weatherCodes).find(icon => weatherCodes[icon].includes(data.current?.condition?.code)) || "default";
+
+         currentWeatherDiv.querySelector(".weather-icon").src = `assets/img/${weatherIcon}.svg`;
+         currentWeatherDiv.querySelector(".temperatur").innerHTML = `${temperature}<sup>°C</sup>`;
+         currentWeatherDiv.querySelector(".description").innerText = description;
+
+         const combinedHourlyData = [...data.forecast.forecastday[0].hour, ...data.forecast.forecastday[1].hour];
+         displayHourlyForecast(combinedHourlyData);
+
+         // Set nilai input untuk kota yang valid
+         searchInput.value = data.location.name;
+
+      } catch (error) {
+         // Jika terjadi error, tampilkan tampilan "no-results"
+         document.body.classList.add("show-no-results");
+      }
+   };
+
+      const setupWeatherRequest = (cityName) => {
+         const API_URL = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${cityName},&days=2`;
+         getWeatherDetails(API_URL);
+      };
+
+      searchInput.addEventListener("keyup", (e) => {
+         const cityName = searchInput.value.trim();
+
+         if (e.key === "Enter" && cityName) {
+            setupWeatherRequest(cityName);
+         }
+      });
+
+      // Ketika aplikasi pertama kali dibuka
+      document.body.classList.add("show-no-search");
+
+      // Event listener pada pencarian
+      searchInput.addEventListener("keyup", (e) => {
+         const cityName = searchInput.value.trim();
+
+         if (e.key === "Enter" && cityName) {
+            document.body.classList.remove("show-no-search"); // Hilangkan tampilan awal no-search
+            setupWeatherRequest(cityName);
+         }
+      });
+
+      // Event listener pada tombol lokasi
+      locationButton.addEventListener("click", () => {
+         document.body.classList.remove("show-no-search"); // Hilangkan tampilan awal no-search
+
+         navigator.geolocation.getCurrentPosition(position => {
+            const { latitude, longitude } = position.coords;
+            const API_URL = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${latitude},${longitude}&days=2`;
+            getWeatherDetails(API_URL);
+         }, error => {
+            alert("Location access denied, Please enable permissions to use this feature.");
+         });
+      });
+
+      document.querySelectorAll(".services-card").forEach((card) => {
+      const swiperContainer = card.querySelector(".mySwiper");
+      const indicator = card.querySelector(".indicator .angka"); // Elemen angka di indicator
+
+      const swiperInstance = new Swiper(swiperContainer, {
+         on: {
+            init: function () {
+                  // Update indikator saat Swiper diinisialisasi
+                  updateIndicator(this, indicator);
+
+                  card.querySelectorAll(".swiper-slide-active img").forEach((img) => {
+                     img.style.transform = "scale(1)";
+                     img.style.opacity = "1";
+                  });
+            },
+            slideChangeTransitionStart: function () {
+                  card.querySelectorAll(".swiper-slide img").forEach((img) => {
+                     img.style.transform = "scale(0.8)";
+                     img.style.opacity = "0.5";
+                  });
+            },
+            slideChangeTransitionEnd: function () {
+                  card.querySelectorAll(".swiper-slide-active img").forEach((img) => {
+                     img.style.transform = "scale(1)";
+                     img.style.opacity = "1";
+                  });
+
+                  // Update indikator setelah transisi selesai
+                  updateIndicator(this, indicator);
+            },
+         },
+      });
+
+      swiperInstance.init();
+   });
+
+   // Fungsi untuk memperbarui indikator
+   function updateIndicator(swiper, indicatorElement) {
+      const currentIndex = swiper.realIndex + 1; // Indeks slide aktif dimulai dari 0, tambahkan 1
+      const totalSlides = swiper.slides.length;
+      indicatorElement.textContent = `${currentIndex}/${totalSlides}`;
+   }
+   </script>
+</body>
+
+</html>
