@@ -357,6 +357,10 @@ img {
   flex-direction: column;
 
 }
+img.weather-icon{
+  width: 50px;
+  height: 50px;
+}
 .weather-section .conditional-container li{
   background-color: #f78a55;
   border-radius: 10px;
