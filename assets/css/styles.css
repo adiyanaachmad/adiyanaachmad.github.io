@@ -314,7 +314,7 @@ img {
 }
 .weather-section .sunrise-sunset-container ul{
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }
 .weather-section .weather-info-support .support-name .img-support{
@@ -380,8 +380,12 @@ img.weather-icon{
   text-align: center;
 }
 .weather-section .sunrise-sunset-container li:nth-child(2){
+  background-color:  #01579B;
+}
+.weather-section .sunrise-sunset-container li:nth-child(3){
   background-color: #FF6F61;
 }
+
 @media screen and (min-width: 1200px){
   .container-weather{
     width: 30%;
