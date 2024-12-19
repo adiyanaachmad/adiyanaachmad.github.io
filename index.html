@@ -168,6 +168,13 @@
                         <span>98</span>%
                      </li>
                      <li>
+                        <span>Wind</span>
+                        <div>
+                           <i class="fa-solid fa-wind"></i>
+                        </div>
+                        <span>11km/j</span>
+                     </li>
+                     <li>
                         <span>Pressure</span>
                         <div>
                            <i class="fa-solid fa-gauge"></i>
@@ -796,6 +803,18 @@
       }
       };
 
+      const displayWind = (data) => {
+         // Pastikan data tersedia dan memiliki properti yang diperlukan
+         if (data && data.forecast && data.forecast.forecastday && data.forecast.forecastday[0].day) {
+            const windSpeed = data.forecast.forecastday[0].day.maxwind_kph || 0; // Ambil kecepatan angin maksimal (dalam kph)
+            const windSpeedText = `${windSpeed} km/h`; // Format teks kecepatan angin
+            return windSpeedText;
+         } else {
+            console.error("Wind data not found in the provided object.");
+            return "-- km/h"; // Nilai default jika data tidak ditemukan
+         }
+      };
+
       const displaySunriseSunset = (data) => {
       // Ambil elemen sunrise-sunset-container
       const sunriseSunsetContainer = document.querySelector(".sunrise-sunset-container ul");
@@ -804,6 +823,7 @@
       if (sunriseSunsetContainer) {
          const sunriseTime = data.forecast.forecastday[0].astro.sunrise || "--:--";
          const sunsetTime = data.forecast.forecastday[0].astro.sunset || "--:--";
+         const windSpeedText = displayWind(data);
 
          // Isi ulang data Sunrise dan Sunset
          sunriseSunsetContainer.innerHTML = `
@@ -813,6 +833,13 @@
                   <i class="fa-solid fa-sun-haze"></i>
                </div>
                <span>${sunriseTime}</span>
+            </li>
+            <li>
+               <span>Wind</span>
+               <div>
+                  <i class="fa-solid fa-wind"></i>
+               </div>
+               <span>${windSpeedText}</span>
             </li>
             <li>
                <span>Sunset</span>
@@ -826,6 +853,7 @@
          console.error("Sunrise and Sunset container not found in the DOM.");
       }
    };
+
 
       const getWeatherDetails = async (API_URL) => {
       // Pastikan class "no-search" dan "no-results" sesuai dengan kondisi
@@ -909,7 +937,7 @@
             alert("Location access denied, Please enable permissions to use this feature.");
          });
       });
-
+      
       document.querySelectorAll(".services-card").forEach((card) => {
       const swiperContainer = card.querySelector(".mySwiper");
       const indicator = card.querySelector(".indicator .angka"); // Elemen angka di indicator
