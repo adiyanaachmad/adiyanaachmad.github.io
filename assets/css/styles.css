@@ -294,7 +294,10 @@ img {
   height: 100%;
   box-shadow: -2px 0 12px hsla(0, 0%, 0%, .2);
   transition: right .4s;
-  overflow-y: auto;
+  overflow-y: hidden;
+}
+.weather-section::-webkit-scrollbar {
+  display: none; /* Hilangkan scrollbar di browser berbasis Webkit seperti Chrome dan Safari */
 }
 .weather-section .weather-info{
   padding: 8px;
@@ -488,6 +491,10 @@ img.weather-icon{
   display: flex;
   gap: 25px;
   overflow: hidden;
+  overflow-y: auto; 
+  max-height: calc(100% - 60px); 
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
 }
 .weather-section .current-weather{
   display: flex;
