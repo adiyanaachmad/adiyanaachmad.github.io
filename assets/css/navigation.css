@@ -168,7 +168,7 @@
 }
 
 .nav__expand-link:hover {
-    color: var(--black-color);
+    color: var(--first-color);
 }
 .dark-theme .nav__expand-link:hover {
     color: var(--white-color);
