@@ -74,13 +74,13 @@
     transition: color .4s;
 }
 
-.nav__link-mobile:hover {
+/* .nav__link-mobile:hover {
     color: var(--first-color);
-}
+} */
 
-.dark-theme .nav__link-mobile:hover {
+/* .dark-theme .nav__link-mobile:hover {
     color: var(--white-color);
-}
+} */
 
 /*=============== EXPAND LIST ===============*/
 .nav__expand {
