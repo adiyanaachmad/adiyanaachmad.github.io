@@ -189,7 +189,7 @@
 }
 
 /* Active link */
-.active-link {
+.nav-menu .active-link {
     color: var(--white-color);
 }
 
