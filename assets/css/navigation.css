@@ -75,7 +75,7 @@
 }
 
 .nav__link-mobile:hover {
-    color: var(--black-color);
+    color: var(--first-color);
 }
 
 .dark-theme .nav__link-mobile:hover {
