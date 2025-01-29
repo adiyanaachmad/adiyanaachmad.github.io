@@ -103,6 +103,7 @@
     width: 32px;
     height: 32px;
     transition: background-color .4s;
+    display: 1;
 }
 
 .nav__expand-icon-init {
@@ -112,7 +113,7 @@
 
 .nav__expand-list {
     position: absolute;
-    top: -33rem;
+    top: -8rem;
     left: 0;
     right: 0;
     background-color: var(--body-color);
@@ -125,7 +126,7 @@
     column-gap: 2rem;
     z-index: -1;
     overflow: hidden;
-    transform: translateY(-7rem) scale(.1);
+    transform: translateY(5rem) scale(.1);
     transition: transform .5s cubic-bezier(.5, 1.8, .4, .8);
 }
 
@@ -175,9 +176,12 @@
 }
 
 /* Show list */
-.show-list,
 .show-list li {
     transform: translateY(0);
+}
+
+.show-list{
+    transform: translateY(12rem);
 }
 
 /* Rotate icon */
@@ -198,6 +202,9 @@
 @media screen and (min-width: 780px) {
     .nav-mobile {
         opacity: 0;
+    }
+    .nav__expand-init{
+        display: none;
     }
 }
 
