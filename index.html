@@ -85,7 +85,7 @@
             <i class="ri-moon-clear-fill change-theme night"></i>
 
             <div class="nav__expand-init" id="nav-expand">
-               <i class="ri-apps-2-add-fill nav__expand-icon-init" id="nav-expand-icon"></i> 
+               <i class="ri-apps-2-add-fill nav__expand-icon-init" id="nav-expand-icon"></i>
             </div>
 
             <!-- <div class="nav-toggle" id="nav-toggle">
@@ -976,7 +976,7 @@
          </li>
 
          <!-- Expand list -->
-            <!-- <button class="nav__expand" id="nav-expand">
+         <!-- <button class="nav__expand" id="nav-expand">
                <i class="ri-add-line nav__expand-icon" id="nav-expand-icon"></i>
             </button> -->
 
@@ -1017,6 +1017,56 @@
    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
    <script>
+
+      particlesJS("particles-js", {
+         "particles": {
+            "number": {
+               "value": 50,
+               "density": {
+                  "enable": true,
+                  "value_area": 800
+               }
+            },
+            "color": {
+               "value": "#fefefe"
+            },
+            "shape": {
+               "type": "circle",
+            },
+            "opacity": {
+               "value": 0.5,
+               "random": false,
+               "anim": {
+                  "enable": false,
+               }
+            },
+            "size": {
+               "value": 8,
+               "random": true,
+               "anim": {
+                  "enable": false,
+               }
+            },
+            "line_linked": {
+               "enable": false,
+            },
+            "move": {
+               "enable": true,
+               "speed": 1,
+               "direction": "none",
+               "random": false,
+               "straight": false,
+               "out_mode": "out",
+               "bounce": false,
+               "attract": {
+                  "enable": false,
+                  "rotateX": 600,
+                  "rotateY": 1200
+               }
+            }
+         },
+         "retina_detect": true
+      });
 
       const navExpand = document.getElementById('nav-expand'),
          navExpandList = document.getElementById('nav-expand-list'),
@@ -1419,7 +1469,7 @@
             alert("Location access denied, Please enable permissions to use this feature.");
          });
       });
-      
+
       document.querySelectorAll(".projects-card").forEach((card) => {
          const swiperContainer = card.querySelector(".mySwiper");
          const buttonIndicator = card.querySelector(".projects-button");
