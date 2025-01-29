@@ -1415,16 +1415,19 @@
             alert("Location access denied, Please enable permissions to use this feature.");
          });
       });
+      
       document.querySelectorAll(".projects-card").forEach((card) => {
          const swiperContainer = card.querySelector(".mySwiper");
+         const buttonIndicator = card.querySelector(".projects-button");
 
          const swiperInstance = new Swiper(swiperContainer, {
             on: {
                init: function () {
-                  card.querySelectorAll(".swiper-slide-active img").forEach((img) => {
-                     img.style.transform = "scale(1)";
-                     img.style.opacity = "1";
-                  });
+                  updateIndicator(buttonIndicator, this);
+                  updateImageScale(card);
+               },
+               slideChange: function () {
+                  updateIndicator(buttonIndicator, this);
                },
                slideChangeTransitionStart: function () {
                   card.querySelectorAll(".swiper-slide img").forEach((img) => {
@@ -1433,16 +1436,28 @@
                   });
                },
                slideChangeTransitionEnd: function () {
-                  card.querySelectorAll(".swiper-slide-active img").forEach((img) => {
-                     img.style.transform = "scale(1)";
-                     img.style.opacity = "1";
-                  });
+                  updateImageScale(card);
                },
             },
          });
 
          swiperInstance.init();
       });
+
+      // Fungsi untuk memperbarui angka indikator
+      function updateIndicator(button, swiper) {
+         const currentSlide = swiper.realIndex + 1; // Indeks slide dimulai dari 0, jadi ditambah 1
+         const totalSlides = swiper.slides.length;
+         button.textContent = `${currentSlide}/${totalSlides}`;
+      }
+
+      // Fungsi untuk memperbarui animasi gambar aktif
+      function updateImageScale(card) {
+         card.querySelectorAll(".swiper-slide-active img").forEach((img) => {
+            img.style.transform = "scale(1)";
+            img.style.opacity = "1";
+         });
+      }
    </script>
 </body>
 
