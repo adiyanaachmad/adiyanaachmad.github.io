@@ -1,0 +1,263 @@
+:root {
+    --header-height: 3.5rem;
+
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --first-color-dark: hsl(151, 52%, 17%);
+    --first-color: hsl(14, 98%, 50%);
+    --black-color: hsl(0, 0%, 0%);
+    --black-color-light: hsl(0, 0%, 40%);
+    --white-color: hsl(0, 0%, 95%);
+    --title-color: hsl(0, 0%, 0%);
+    --text-color: hsl(0, 0%, 35%);
+    --text-color-light: hsl(0, 0%, 64%);
+    --body-color: hsl(0, 0%, 87%);
+    --container-color: hsl(0, 0%, 83%);
+
+    --first-color-winter: hsl(72, 59%, 45%);
+    --first-color-alt-winter: hsl(72, 75%, 38%);
+    --first-color-dark-winter: hsl(151, 52%, 17%);
+    --first-color-darker-winter: hsl(151, 52%, 12%);
+    --title-color-winter: hsl(49, 96%, 91%);
+    --text-color-winter: hsl(99, 20%, 65%);
+
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: "Bai Jamjuree", sans-serif;
+    --biggest-font-size: 2.5rem;
+    --h1-font-size: 1.75rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    /*========== Font weight ==========*/
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    --font-bold: 700;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1150px) {
+    :root {
+        --biggest-font-size: 4.5rem;
+        --h1-font-size: 3rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--body-color);
+    z-index: var(--z-fixed);
+    transition: box-shadow .4s;
+}
+
+.nav {
+    position: relative;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    display: flex;
+    column-gap: .5rem;
+    align-items: center;
+    font-weight: var(--font-semi-bold);
+    color: var(--title-color);
+}
+
+.nav-logo-circle,
+.nav-toggle {
+    width: 32px;
+    height: 32px;
+    background-color: var(--black-color-light);
+    color: var(--white-color);
+    display: grid;
+    place-items: center;
+}
+
+.nav-logo-circle {
+    border-radius: 50%;
+}
+
+.nav-toggle {
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.nav-title,
+.nav-name,
+.nav-close {
+    color: var(--white-color);
+}
+
+.nav-title {
+    display: block;
+    font-size: var(--smaller-font-size);
+    font-weight: var(--font-semi-bold);
+    margin-bottom: 3.5rem;
+}
+
+.nav-name {
+    position: relative;
+    width: max-content;
+    margin: 0 auto 3rem;
+    font-size: var(--h2-font-size);
+}
+
+.nav-name::after,
+.nav-name::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background-color: var(--text-color-light);
+    position: absolute;
+    top: 50%;
+    left: -4rem;
+}
+
+.nav-name::before {
+    left: initial;
+    right: -4rem;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+}
+
+.nav-link {
+    position: relative;
+    color: var(--text-color-light);
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-semi-bold);
+    transition: color .3s;
+}
+
+.nav-link::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: var(--white-color);
+    position: absolute;
+    left: 0;
+    bottom: -.5rem;
+    transition: width .3s;
+}
+
+.nav-link:hover {
+    color: var(--white-color);
+}
+
+.nav-link:hover::after {
+    width: 25%;
+}
+
+.nav-close {
+    position: absolute;
+    font-size: 1.5rem;
+    top: 1rem;
+    right: 1.5rem;
+    cursor: pointer;
+}
+
+/* Show menu */
+.show-menu {
+    top: 0 !important;
+}
+
+/* Add shadow header */
+.shadow-header {
+    box-shadow: 0 1px 16px hsla(0, 0%, 0%, .12);
+}
+
+/* Active link */
+.active-link {
+    color: var(--white-color);
+}
+
+.active-link::after {
+    width: 25%;
+}
+
+@media screen and (max-width: 1150px) {
+    .nav-menu {
+        position: fixed;
+        top: -300%;
+        left: 0;
+        background-color: hsla(0, 0%, 0%, .75);
+        width: 100%;
+        padding-block: 1.8rem 5rem;
+        text-align: center;
+        backdrop-filter: blur(8px);
+        transition: top .4s;
+    }
+}
+
+@media screen and (min-width: 1150px) {
+    .nav {
+        height: calc(var(--header-height) + 1rem);
+        column-gap: 4rem;
+    }
+
+    .nav-close,
+    .nav-toggle,
+    .nav-title,
+    .nav-name {
+        display: none;
+    }
+
+    .nav-list {
+        flex-direction: row;
+        column-gap: 4rem;
+    }
+
+    .nav-link {
+        color: var(--text-color);
+        font-size: var(--normal-font-size);
+    }
+
+    .nav-link:hover {
+        color: var(--title-color);
+    }
+
+    .nav-link::after {
+        background-color: var(--title-color);
+    }
+
+    .nav-link-button {
+        background-color: var(--black-color);
+        color: var(--white-color);
+        padding: 1.1rem 1.5rem;
+    }
+
+    .nav-link-button:hover {
+        color: var(--white-color);
+    }
+
+    .nav-link-button::after {
+        background-color: transparent;
+<<<<<<< HEAD
+    }
+}
+=======
+      }
+}
+>>>>>>> 6c9fd3ce5ce0e609fd10f6ddc44ae7ec9f76156b

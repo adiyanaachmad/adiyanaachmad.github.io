@@ -1,0 +1,105 @@
+:root {
+    --header-height: 3.5rem;
+
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --first-color-dark: hsl(151, 52%, 17%);
+    --first-color: hsl(14, 98%, 50%);
+    --black-color: hsl(0, 0%, 0%);
+    --black-color-light: hsl(0, 0%, 40%);
+    --white-color: hsl(0, 0%, 95%);
+    --title-color: hsl(0, 0%, 0%);
+    --text-color: hsl(0, 0%, 35%);
+    --text-color-light: hsl(0, 0%, 64%);
+    --body-color: hsl(0, 0%, 87%);
+    --container-color: hsl(0, 0%, 83%);
+
+    --first-color-winter: hsl(72, 59%, 45%);
+    --first-color-alt-winter: hsl(72, 75%, 38%);
+    --first-color-dark-winter: hsl(151, 52%, 17%);
+    --first-color-darker-winter: hsl(151, 52%, 12%);
+    --title-color-winter: hsl(49, 96%, 91%);
+    --text-color-winter: hsl(99, 20%, 65%);
+
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: "Bai Jamjuree", sans-serif;
+    --biggest-font-size: 2.5rem;
+    --h1-font-size: 1.75rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    /*========== Font weight ==========*/
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    --font-bold: 700;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1150px) {
+    :root {
+        --biggest-font-size: 4.5rem;
+        --h1-font-size: 3rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+}
+
+.footer {
+    background-color: var(--black-color);
+}
+
+.footer-container {
+    padding-block: 3rem 2rem;
+    row-gap: 2.5rem;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    column-gap: 2rem;
+}
+
+.footer-link {
+    color: var(--white-color);
+    transition: bcolor .4s;
+}
+
+.footer-link:hover {
+    color: var(--text-color-light);
+}
+
+.footer-copy {
+    color: var(--text-color-light);
+    font-size: var(--small-font-size);
+    text-align: center;
+}
+
+.footer-copy a {
+    color: var(--white-color);
+    font-weight: var(--font-medium);
+}
+
+@media screen and (min-width: 1150px) {
+    .footer-container {
+        padding-block: 4rem;
+        grid-template-columns: repeat(2, max-content);
+        justify-content: space-between;
+    }
+
+    .footer-link {
+        column-gap: 3rem;
+        order: 1;
+    }
+}

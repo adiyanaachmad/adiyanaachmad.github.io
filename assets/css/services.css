@@ -1,0 +1,153 @@
+:root {
+    --header-height: 3.5rem;
+
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --first-color-dark: hsl(151, 52%, 17%);
+    --first-color: hsl(14, 98%, 50%);
+    --black-color: hsl(0, 0%, 0%);
+    --black-color-light: hsl(0, 0%, 40%);
+    --white-color: hsl(0, 0%, 95%);
+    --title-color: hsl(0, 0%, 0%);
+    --text-color: hsl(0, 0%, 35%);
+    --text-color-light: hsl(0, 0%, 64%);
+    --body-color: hsl(0, 0%, 87%);
+    --container-color: hsl(0, 0%, 83%);
+
+    --first-color-winter: hsl(72, 59%, 45%);
+    --first-color-alt-winter: hsl(72, 75%, 38%);
+    --first-color-dark-winter: hsl(151, 52%, 17%);
+    --first-color-darker-winter: hsl(151, 52%, 12%);
+    --title-color-winter: hsl(49, 96%, 91%);
+    --text-color-winter: hsl(99, 20%, 65%);
+
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: "Bai Jamjuree", sans-serif;
+    --biggest-font-size: 2.5rem;
+    --h1-font-size: 1.75rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    /*========== Font weight ==========*/
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    --font-bold: 700;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+@media screen and (min-width: 1150px) {
+    :root {
+        --biggest-font-size: 4.5rem;
+        --h1-font-size: 3rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+}
+
+.services-container {
+    grid-template-columns: 250px;
+    justify-content: center;
+    row-gap: 2rem;
+    padding-top: 1rem;
+}
+
+.services-card {
+    position: relative;
+}
+
+.services-content {
+    height: 100%;
+    background-color: var(--body-color);
+    border: 4px solid var(--black-color);
+    padding: 6rem 1rem 3rem;
+    z-index: 5;
+    position: relative;
+    transition: background-color .4s, border .4s;
+}
+
+.services-border {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 4px solid var(--first-color);
+    top: 0;
+    left: 0;
+    transition: transform .4s;
+}
+
+.services-card:hover .services-border {
+    transform: translate(.75rem, .75rem);
+}
+
+.services-icon {
+    position: relative;
+    display: inline-block;
+}
+
+.services-icon i {
+    font-size: 2rem;
+    color: var(--black-color);
+    position: relative;
+    z-index: 5;
+}
+
+.services-box {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-color: var(--first-color);
+    right: -2px;
+    top: -2px;
+}
+
+.services-title {
+    font-size: var(--h2-font-size);
+    margin-bottom: 1.25rem;
+}
+
+@media screen and (min-width: 768px) {
+    .services-container {
+        grid-template-columns: repeat(2, 250px);
+    }
+}
+
+@media screen and (min-width: 1150px) {
+    .services-container {
+        grid-template-columns: repeat(3, 282px);
+        column-gap: 5rem;
+        padding-block: 3rem 5rem;
+    }
+
+    .services-content {
+        padding: 6.5rem 1.5rem 3.5rem;
+        border: 6px solid var(--black-color);
+    }
+
+    .services-icon i {
+        font-size: 3rem;
+    }
+
+    .services-box {
+        width: 32px;
+        height: 32px;
+    }
+
+    .services-title {
+        margin-bottom: 1.5rem;
+    }
+
+    .services-card:hover .services-border {
+        transform: translate(1.25rem, 1.25rem);
+    }
+}

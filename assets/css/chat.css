@@ -1,0 +1,583 @@
+:root {
+    --header-height: 3.5rem;
+
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --first-color-dark: hsl(151, 52%, 17%);
+    --first-color: hsl(14, 98%, 50%);
+    --black-color: hsl(0, 0%, 0%);
+    --black-color-light: hsl(0, 0%, 40%);
+    --white-color: hsl(0, 0%, 95%);
+    --title-color: hsl(0, 0%, 0%);
+    --text-color: hsl(0, 0%, 35%);
+    --text-color-light: hsl(0, 0%, 64%);
+    --body-color: hsl(0, 0%, 87%);
+    --container-color: hsl(0, 0%, 83%);
+
+    --first-color-winter: hsl(72, 59%, 45%);
+    --first-color-alt-winter: hsl(72, 75%, 38%);
+    --first-color-dark-winter: hsl(151, 52%, 17%);
+    --first-color-darker-winter: hsl(151, 52%, 12%);
+    --title-color-winter: hsl(49, 96%, 91%);
+    --text-color-winter: hsl(99, 20%, 65%);
+
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: "Bai Jamjuree", sans-serif;
+    --biggest-font-size: 2.5rem;
+    --h1-font-size: 1.75rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    /*========== Font weight ==========*/
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    --font-bold: 700;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1150px) {
+    :root {
+        --biggest-font-size: 4.5rem;
+        --h1-font-size: 3rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+}
+
+.container-weather.open {
+    display: block;
+}
+
+#chatbot-toggler {
+    position: fixed;
+    left: 35px;
+    bottom: 3rem;
+    background-color: var(--black-color);
+    display: inline-flex;
+    padding: 8px;
+    font-size: 1.25rem;
+    color: var(--white-color);
+    z-index: var(--z-tooltip);
+    transition: bottom .4s, transform .4s, background-color .4s;
+    border: none;
+    cursor: pointer;
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    padding: 13px 22px;
+    background: var(--body-color);
+    justify-content: space-between;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    box-shadow: 0 1px 16px hsla(0, 0%, 0%, .12)
+}
+
+.dark-theme .chat-header {
+    box-shadow: 0 1px 12px hsla(0, 0%, 0%, .6);
+}
+
+.close-container i {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.header-info .img-support {
+    background-color: #000;
+    width: 170px;
+    border-radius: 6px;
+}
+
+.chat-header .header-info {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.header-info .chatbot-logo {
+    width: 35px;
+    height: 35px;
+    padding: 6px;
+    fill: #5350C4;
+    flex-shrink: 0;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.header-info .logo-text {
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.31rem;
+    letter-spacing: 0.02rem;
+}
+
+.chat-header #close-chatbot {
+    border: none;
+    color: #fff;
+    height: 40px;
+    width: 40px;
+    font-size: 1.9rem;
+    margin-right: -10px;
+    padding-top: 2px;
+    cursor: pointer;
+    border-radius: 50%;
+    background: none;
+    transition: 0.2s ease;
+}
+
+.chat-header #close-chatbot:hover {
+    background: #3d39ac;
+}
+
+.container-weather {
+    background: var(--body-color);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: fixed;
+    z-index: 1000;
+    padding: 30px;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    box-shadow: -2px 0 12px hsla(0, 0%, 0%, .2);
+    transition: .5s; /* Lebih halus */
+    overflow-y: hidden;
+    display: none;
+}
+
+.weather-section::-webkit-scrollbar {
+    display: none;
+    /* Hilangkan scrollbar di browser berbasis Webkit seperti Chrome dan Safari */
+}
+
+.weather-section .weather-info {
+    padding: 8px;
+}
+
+.weather-section .weather-info .location-date-container,
+.weather-section .weather-info-support .support-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.weather-section .conditional-container ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.weather-section .sunrise-sunset-container ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.weather-section .weather-info-support .support-name .img-support {
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+.weather-section .weather-info .location-name {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-transform: uppercase;
+}
+
+.weather-section .weather-info .location-name i {
+    font-size: 2rem;
+    color: var(--title-color);
+}
+
+.hourly-weather {
+    padding: 16px 25px;
+    background-color: #000;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.conditional-container {
+    color: #fff;
+}
+
+.sunrise-sunset-container {
+    color: #fff;
+}
+
+.hourly-weather .weather-list {
+    display: flex;
+    list-style: none;
+    gap: 1.8rem;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+    padding-bottom: 16px;
+    margin-bottom: -16px;
+}
+
+.hourly-weather:hover .weather-list {
+    scrollbar-color: #bfbfbf transparent;
+}
+
+.hourly-weather .weather-item {
+    display: flex;
+    gap: 7px;
+    font-weight: 500;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+img.weather-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.weather-section .conditional-container li {
+    background-color: #f78a55;
+    border-radius: 10px;
+    padding: 20px 10px;
+    background-image: linear-gradient(to bottom, transparent 50%, #0003 50%);
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.weather-section .sunrise-sunset-container li {
+    background-color: #6A82FB;
+    border-radius: 10px;
+    padding: 20px 10px;
+    background-image: linear-gradient(to bottom, transparent 50%, #0003 50%);
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.weather-section .sunrise-sunset-container li:nth-child(2) {
+    background-color: #01579B;
+}
+
+.weather-section .sunrise-sunset-container li:nth-child(3) {
+    background-color: #FF6F61;
+}
+
+@media screen and (min-width: 1200px) {
+    .container-weather {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .container-weather {
+        width: 100%;
+    }
+
+    /* .weather-section .conditional-container ul{
+      gap: 35px;
+    } */
+    .hourly-weather .weather-list {
+        gap: 28px;
+    }
+}
+
+.weather-section .conditional-container li i,
+.weather-section .sunrise-sunset-container li i {
+    font-size: 2em;
+    display: block;
+    margin: 20px 0;
+}
+
+.weather-section .conditional-container li:nth-child(2) {
+    background-color: #b56291;
+}
+
+.weather-section .conditional-container li:nth-child(3) {
+    background-color: #48567b;
+}
+
+.search-section {
+    display: flex;
+    padding: 15px 22px 20px;
+    align-items: center;
+    gap: 10px;
+    left: 0;
+    right: 0;
+    position: absolute;
+    bottom: 0;
+    z-index: 9;
+    background: var(--body-color);
+    box-shadow: 0 1px 16px hsla(0, 0%, 0%, .12)
+}
+
+.dark-theme .search-section {
+    box-shadow: 0 1px 12px hsla(0, 0%, 0%, .6);
+}
+
+.search-section .input-wrapper {
+    height: 54px;
+    width: 100%;
+    position: relative;
+}
+
+.search-section .input-wrapper span {
+    position: absolute;
+    color: #000;
+    top: 50%;
+    left: 17px;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+}
+
+.dark-theme .search-section .input-wrapper span {
+    color: #fff;
+}
+
+.search-section .search-input {
+    height: 100%;
+    width: 100%;
+    color: #000;
+    background-color: var(--container-color);
+    border-radius: 6px;
+    outline: none;
+    padding: 0 20px 0 50px;
+    font-size: 1rem;
+    border: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: 0.1s ease;
+    font-family: "Bai Jamjuree", sans-serif;
+}
+
+.dark-theme .search-section .search-input{
+    color: #fff;
+}
+
+.search-section .search-input::placeholder {
+    text-transform: none;
+}
+
+.search-section .location-button,
+.search-section .close-container {
+    height: 54px;
+    width: 56px;
+    background-color: var(--container-color);
+    color: #000;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+}
+
+.dark-theme .search-section .location-button {
+    color: #fff;
+}
+
+/* .search-section .search-input:focus {
+    border-color: var(--first-color-alt);
+} */
+
+.search-section .location-button span,
+.search-section .close-container span {
+    font-size: 1.5rem;
+}
+
+.search-section .location-button:hover,
+.search-section .close-container:hover {
+    color: #fff;
+    background: var(--first-color);
+    border-color: none;
+}
+
+.hourly-weather .weather-icon .weather-item {
+    width: 28px;
+    aspect-ratio: 1;
+}
+
+.weather-section {
+    flex-direction: column;
+    display: flex;
+    gap: 25px;
+    position: relative;
+    top: 10%;
+    overflow: hidden;
+    overflow-y: auto;
+    max-height: calc(90% - 60px);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.weather-section .current-weather {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+}
+
+.weather-section .current-weather .info-aja {
+    text-align: end;
+}
+
+.current-weather .weather-icon,
+.container-weather .no-search img {
+    width: 120px;
+    height: 120px;
+    padding: 10px;
+    filter: drop-shadow(0 10px 10px #000);
+}
+
+.clear-btn {
+    position: absolute;
+    right: 15px;
+    /* Jarak dari sisi kanan */
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #000;
+    cursor: pointer;
+    display: none;
+    /* Default tersembunyi */
+}
+
+.clear-btn:hover {
+    color: #000;
+}
+
+
+.dark-theme .clear-btn {
+    color: #fff;
+}
+
+/* Hilangkan tombol close bawaan */
+.search-input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+    display: none;
+}
+
+.input-wrapper.show-clear .clear-btn {
+    display: block;
+    /* Tampilkan tombol saat input ada teks */
+}
+
+.current-weather .temperatur {
+    font-size: 3.38rem;
+}
+
+.current-weather .temperatur span {
+    font-size: 1.56rem;
+    font-weight: 500;
+    margin: 5px 0 0 2px;
+}
+
+.current-weather .description {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--title-color);
+}
+
+.no-results {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: none;
+    margin-top: 2rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 12px;
+}
+
+.no-results .title {
+    margin: 25px 0 15px;
+}
+
+.no-results .message {
+    font-weight: 500;
+}
+
+.close-container i {
+    color: #000;
+}
+
+.dark-theme .close-container i{
+    color: #fff;
+}
+
+body.show-no-results .no-results {
+    display: flex;
+}
+
+body.show-no-results .weather-section {
+    visibility: hidden;
+}
+
+.no-search {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: none;
+    margin-top: 2rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 12px;
+}
+
+.no-search .title {
+    margin: 25px 0 15px;
+}
+
+.no-search .message {
+    font-weight: 500;
+}
+
+p.message {
+    color: var(--title-color);
+}
+
+body.show-no-search .no-search {
+    display: flex;
+}
+
+body.show-no-search .weather-section {
+    visibility: hidden;
+}
+
+@media screen and (max-width: 780px) {
+    .nav-notification{
+        opacity: 0;
+    }
+}
