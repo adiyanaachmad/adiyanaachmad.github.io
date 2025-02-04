@@ -1,4 +1,6 @@
 // Inisialisasi Particles.js
+let particleSize = 5; // Set default ukuran partikel
+
 particlesJS("particles-js", {
     "particles": {
         "number": {
@@ -18,8 +20,8 @@ particlesJS("particles-js", {
             "value": 0.5
         },
         "size": {
-            "value": 8,
-            "random": true
+            "value": particleSize, // Gunakan nilai default 5
+            "random": false
         },
         "move": {
             "enable": true,
@@ -41,15 +43,21 @@ function slider() {
     let particleCount = rawValue * 10;
     let percentage = (rawValue - mySlider.min) / (mySlider.max - mySlider.min) * 100;
 
-    // Perbaiki background agar sesuai dengan thumb
     mySlider.style.background = `linear-gradient(to right, #3264fe ${percentage}%, #d5d5d5 ${percentage}%)`;
-
     sliderValue.textContent = particleCount;
 
     if (window.pJSDom && window.pJSDom[0] && window.pJSDom[0].pJS) {
+        let currentSize = particleSize; // Simpan ukuran partikel saat ini
         window.pJSDom[0].pJS.particles.number.value = particleCount;
         window.pJSDom[0].pJS.fn.particlesRefresh();
 
+        // Setelah refresh, update ukuran partikel kembali
+        let particles = window.pJSDom[0].pJS.particles.array;
+        particles.forEach(particle => {
+            particle.radius = currentSize; // Gunakan ukuran sebelumnya
+        });
+
+        window.pJSDom[0].pJS.particles.size.value = currentSize;
         window.pJSDom[0].pJS.particles.move.speed = particleSpeed;
     }
 }
@@ -63,8 +71,6 @@ function updateSliderBackground() {
     let percentage = (rawValue - slider.min) / (max - slider.min) * 100;
 
     sliderValue.textContent = rawValue;
-
-    // Pastikan gradient tidak melebihi thumb
     slider.style.background = `linear-gradient(to right, #3264fe ${percentage}%, #d5d5d5 ${percentage}%)`;
 
     particleSpeed = rawValue;
@@ -81,4 +87,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById("particle-speed-slider").value = 1;
     updateSliderBackground();
+
+    // Set nilai default slider size ke 5
+    const sizeSlider = document.getElementById("particle-size");
+    sizeSlider.value = 5;
+    document.getElementById("slider-value-size").textContent = 5;
+});
+
+function updateSliderSize() {
+    const slider = document.getElementById("particle-size");
+    const sliderValue = document.getElementById("slider-value-size");
+    particleSize = parseInt(slider.value);
+    sliderValue.textContent = particleSize;
+
+    // Menghitung persentase untuk latar belakang slider
+    let percentage = (particleSize - slider.min) / (slider.max - slider.min) * 100;
+
+    // Batasi persentase agar tidak melebihi 100% (untuk menghindari latar belakang melewati thumb)
+    percentage = Math.min(percentage, 100); 
+    
+    // Menambahkan latar belakang gradien pada slider sesuai posisi thumb
+    slider.style.background = `linear-gradient(to right, #3264fe ${percentage}%, #d5d5d5 ${percentage}%)`;
+
+    if (window.pJSDom && window.pJSDom.length > 0) {
+        let particles = window.pJSDom[0].pJS.particles.array;
+        particles.forEach(particle => {
+            particle.radius = particleSize; // Perbarui ukuran tiap partikel
+        });
+
+        // Perbarui nilai dalam konfigurasi tetapi tanpa mereset partikel
+        window.pJSDom[0].pJS.particles.size.value = particleSize;
+    }
+}
+
+// Pastikan untuk memperbarui slider saat halaman dimuat
+document.addEventListener("DOMContentLoaded", function () {
+    const sizeSlider = document.getElementById("particle-size");
+    sizeSlider.value = 5;  // Set nilai awal slider ke 5
+    updateSliderSize(); // Update latar belakang slider
 });
