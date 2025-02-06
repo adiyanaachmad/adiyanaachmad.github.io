@@ -17,7 +17,7 @@ particlesJS("particles-js", {
             "type": "circle"
         },
         "opacity": {
-            "value": 0.5
+            "value": 1.0
         },
         "size": {
             "value": particleSize, // Gunakan nilai default 5
@@ -125,4 +125,43 @@ document.addEventListener("DOMContentLoaded", function () {
     const sizeSlider = document.getElementById("particle-size");
     sizeSlider.value = 5;  // Set nilai awal slider ke 5
     updateSliderSize(); // Update latar belakang slider
+});
+
+let particleOpacity = 1.0; // Nilai opacity default
+
+// Fungsi untuk memperbarui opacity saat slider digeser
+function updateSliderOpacity() {
+    const slider = document.getElementById("particle-opacity");
+    const sliderValue = document.getElementById("slider-value-opacity");
+
+    // Menghitung nilai opacity antara 0.1 - 1.0
+    particleOpacity = slider.value / 10; // Ubah slider dari 1-10 menjadi 0.1-1.0
+    sliderValue.textContent = particleOpacity.toFixed(1);  // Menampilkan nilai opacity
+
+    // Perbarui latar belakang slider sesuai dengan nilai opacity
+    let percentage = (slider.value - slider.min) / (slider.max - slider.min) * 100;
+    slider.style.background = `linear-gradient(to right, #3264fe ${percentage}%, #d5d5d5 ${percentage}%)`;
+
+    // Pastikan Particles.js sudah diinisialisasi
+    if (window.pJSDom && window.pJSDom.length > 0) {
+        let pJS = window.pJSDom[0].pJS;
+
+        // Update opacity partikel menggunakan nilai opacity yang baru
+        pJS.particles.opacity.value = particleOpacity;
+
+        // Terapkan perubahan ke semua partikel
+        pJS.particles.array.forEach(particle => {
+            particle.opacity = particleOpacity;
+        });
+
+        // Paksa redraw partikel agar perubahan langsung terlihat
+        pJS.fn.particlesDraw();
+    }
+}
+
+// Pastikan slider diinisialisasi dengan benar
+document.addEventListener("DOMContentLoaded", function () {
+    const opacitySlider = document.getElementById("particle-opacity");
+    opacitySlider.value = 10;  // Set nilai awal slider ke 10 (1.0 opacity)
+    updateSliderOpacity(); // Memperbarui opacity pada saat halaman dimuat
 });
