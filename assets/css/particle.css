@@ -9,7 +9,8 @@
 
 .speed-particle .header-particle h3,
 .speed-particle-init .header-particle h3,
-.partitcle-size .header-size h3{
+.partitcle-size .header-size h3,
+.particle-opacity .header-opacity h3{
     color: black;
 }
 
@@ -22,7 +23,8 @@
     margin: 15px 0 20px 0;
 }
 
-.particle-size {
+.particle-size,
+.particle-opacity {
     position: relative;
     z-index: 200;
     opacity: 1;
@@ -41,13 +43,15 @@
 
 .setting-init,
 .setting-init-2,
-.setting-size {
+.setting-size,
+.setting-opacity {
     padding-top: 20px;
 }
 
 .setting-init input[type="range"],
 .setting-init-2 input[type="range"],
-.setting-size input[type="range"] {
+.setting-size input[type="range"],
+.setting-opacity input[type="range"] {
     -webkit-appearance: none;
     -moz-appearance: none;
     display: block;
@@ -63,28 +67,32 @@
 
 .setting-init input[type="range"]::-webkit-slider-runnable-track,
 .setting-init-2 input[type="range"]::-webkit-slider-runnable-track,
-.setting-size input[type="range"]::-webkit-slider-runnable-track {
+.setting-size input[type="range"]::-webkit-slider-runnable-track,
+.setting-opacity input[type="range"]::-webkit-slider-runnable-track {
     -webkit-appearance: none;
     height: 8px;
 }
 
 .setting-init input[type="range"]::-moz-track,
 .setting-init-2 input[type="range"]::-moz-track,
-.setting-size input[type="range"]::-moz-track {
+.setting-size input[type="range"]::-moz-track,
+.setting-opacity input[type="range"]::-moz-track {
     -moz-appearance: none;
     height: 8px;
 }
 
 .setting-init input[type="range"]::-ms-track,
 .setting-init-2 input[type="range"]::-ms-track,
-.setting-size input[type="range"]::-ms-track {
+.setting-size input[type="range"]::-ms-track,
+.setting-opacity input[type="range"]::-ms-track {
     appearance: none;
     height: 8px;
 }
 
 .setting-init input[type="range"]::-webkit-slider-thumb,
 .setting-init-2 input[type="range"]::-webkit-slider-thumb,
-.setting-size input[type="range"]::-webkit-slider-thumb {
+.setting-size input[type="range"]::-webkit-slider-thumb,
+.setting-opacity input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 20px;
     width: 20px;
@@ -97,7 +105,8 @@
 
 .setting-init input[type="range"]::-moz-range-thumb,
 .setting-init-2 input[type="range"]::-moz-range-thumb,
-.setting-size input[type="range"]::-moz-range-thumb {
+.setting-size input[type="range"]::-moz-range-thumb,
+.setting-opacity input[type="range"]::-moz-range-thumb {
     -webkit-appearance: none;
     height: 20px;
     width: 20px;
@@ -110,7 +119,8 @@
 
 .setting-init input[type="range"]::-ms-thumb
 .setting-init-2 input[type="range"]::-ms-thumb,
-.setting-size input[type="range"]::-ms-thumb {
+.setting-size input[type="range"]::-ms-thumb,
+.setting-opacity input[type="range"]::-ms-thumb {
     appearance: none;
     height: 20px;
     width: 20px;
@@ -123,13 +133,15 @@
 
 .setting-init input[type="range"]:active::-webkit-slider-thumb,
 .setting-init-2 input[type="range"]:active::-webkit-slider-thumb,
-.setting-size input[type="range"]:active::-webkit-slider-thumb {
+.setting-size input[type="range"]:active::-webkit-slider-thumb,
+.setting-opacity input[type="range"]:active::-webkit-slider-thumb {
     background-color: #ffffff;
     border: 3px solid #3264fe;
 }
 
 .speed-particle-init .header-particle,
-.particle-size .header-size{
+.particle-size .header-size,
+.particle-opacity .header-opacity{
     display: flex;
     justify-content: space-between;
     align-items: baseline;
@@ -150,7 +162,8 @@
 #slider-value,
 #slider-value-init,
 .icon-po,
-#slider-value-size{
+#slider-value-size,
+#slider-value-opacity{
     width: 40px;
     height: 40px;
     position: relative;
