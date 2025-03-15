@@ -103,23 +103,53 @@ themeButtons.forEach(button => {
 
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
-document.querySelectorAll(".image-comparison").forEach((comparison) => {
-  const slider = comparison.querySelector(".slider");
-  const beforeImage = comparison.querySelector(".before-image");
-  const sliderLine = comparison.querySelector(".slider-line");
-  const sliderIcon = comparison.querySelector(".slider-icon");
+document.addEventListener("DOMContentLoaded", () => {
+  const projectCards = document.querySelectorAll(".projects__card");
 
-  // Set posisi awal di kiri (0%)
-  slider.value = 0;
-  beforeImage.style.width = "0%";
-  sliderLine.style.left = "0%";
-  sliderIcon.style.left = "0%";
+  projectCards.forEach((card) => {
+      const toggleButton = card.querySelector(".projects__button");
+      const sliderLine = card.querySelector(".slider-line");
+      const sliderIcon = card.querySelector(".slider-icon");
+      const slider = card.querySelector(".slider");
+      const beforeImage = card.querySelector(".before-image");
 
-  slider.addEventListener("input", (e) => {
-     let sliderValue = e.target.value + "%";
+      toggleButton.addEventListener("click", (e) => {
+          e.preventDefault();
 
-     beforeImage.style.width = sliderValue;
-     sliderLine.style.left = sliderValue;
-     sliderIcon.style.left = sliderValue;
+          if (slider.classList.contains("hidden")) {
+              // Aktifkan Image Comparison untuk card ini
+              sliderLine.classList.remove("hidden");
+              sliderIcon.classList.remove("hidden");
+              slider.classList.remove("hidden");
+              slider.removeAttribute("disabled"); // Aktifkan slider
+              toggleButton.textContent = "ON";
+          } else {
+              // Matikan Image Comparison dengan animasi pergeseran
+              slider.value = 0;
+              beforeImage.style.transition = "width 0.5s ease"; // Tambahkan animasi
+              beforeImage.style.width = "0%";
+              sliderLine.style.transition = "left 0.5s ease"; // Tambahkan animasi
+              sliderIcon.style.transition = "left 0.5s ease"; // Tambahkan animasi
+              sliderLine.style.left = "0%";
+              sliderIcon.style.left = "0%";
+
+              setTimeout(() => {
+                  sliderLine.classList.add("hidden");
+                  sliderIcon.classList.add("hidden");
+                  slider.classList.add("hidden");
+                  slider.setAttribute("disabled", "true"); // Matikan slider
+                  toggleButton.textContent = "OFF";
+              }, 500); // Tunggu animasi selesai sebelum disembunyikan
+          }
+      });
+
+      // Pastikan setiap slider memiliki event listener masing-masing
+      slider.addEventListener("input", (e) => {
+          let sliderValue = e.target.value + "%";
+          beforeImage.style.transition = sliderValue // Hapus animasi agar responsif
+          beforeImage.style.width = sliderValue;
+          sliderLine.style.left = sliderValue;
+          sliderIcon.style.left = sliderValue;
+      });
   });
 });
