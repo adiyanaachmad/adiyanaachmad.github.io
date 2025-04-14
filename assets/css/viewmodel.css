@@ -1,0 +1,198 @@
+.popup {
+    display: flex;
+    /* width: 100%; */
+    height: 80vh;
+    position: relative;
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 10px; */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* Membagi kiri dan kanan */
+.popup__left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Area tampilan model */
+.view__model {
+    flex: 1;
+    background-color: #f9f9f9;
+    --color: #E1E1E1;
+    background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent),
+        linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent);
+    position: relative;
+    background-size: 55px 55px;
+}
+
+#container3D canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Bagian detail model */
+/* .view__detail_3d {
+    padding: 15px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    height: 150px;
+    overflow-y: auto;
+    font-size: 14px;
+} */
+
+/* Setting di kanan */
+.view__setting {
+    width: 300px;
+    background-color: #f9f9f9;
+    border-left: 1px solid #ccc;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.header__setting {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.header__setting i {
+    font-size: 20px;
+    color: white;
+    align-items: center;
+    cursor: pointer;
+    background-color: red;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.detail {
+    display: flex;
+}
+
+.init__3d {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F4F0FA;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 8px;
+    margin-top: 10px;
+}
+
+.init__3d:hover {
+    background: #EDE6FB;
+}
+
+.status h3 {
+    color: white;
+}
+
+.view__detail_3d {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+    background: #F4F0FA;
+    zoom: .7;
+    border: 1px solid #ddd;
+}
+
+.view__detail_3d .title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.view__detail_3d .title .line {
+    width: 6px;
+    height: 50px;
+    background: #006ED3;
+    border-radius: 20px;
+}
+
+.view__detail_3d h5 {
+    font-size: 25px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+.indicator h3 {
+    font-size: 20px;
+}
+
+.view__detail_ws {
+    height: 150px;
+}
+
+.simbol__3d {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.simbol__3d img {
+    width: 10%;
+}
+
+.memuat {
+    background-color: transparent;
+    padding: 10px;
+}
+
+.memuat h3 {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .simbol__3d img {
+        width: 22%;
+    }
+
+    .popup {
+        flex-direction: column;
+        height: auto;
+        z-index: 99;
+    }
+
+    .dropdown__modal{
+        width: 40%;
+    }
+
+    .popup__left {
+        width: 100%;
+    }
+
+    .view__model {
+        height: 50vh;
+        /* atau atur sesuai kebutuhan */
+    }
+
+    .view__detail_ws {
+        height: auto;
+        padding-bottom: 10px;
+        display: none;
+    }
+
+    .view__setting {
+        width: 100%;
+        height: 30%;
+        border-left: none;
+        border-top: 1px solid #ccc;
+        position: absolute;
+        bottom: 0;
+    }
+}
