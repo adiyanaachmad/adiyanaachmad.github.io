@@ -8,7 +8,7 @@
     transform: translate(-50%, -50%);
     background-color: white;
     border-radius: 10px; */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); */
     overflow: hidden;
     border-radius: 10px;
 }
@@ -32,7 +32,7 @@
 /* Area tampilan model */
 .view__model {
     flex: 1;
-    background-color: #f9f9f9;
+    background-color: var(--container-color);
     --color: #E1E1E1;
     background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent),
         linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent);
