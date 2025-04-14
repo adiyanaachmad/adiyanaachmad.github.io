@@ -349,6 +349,7 @@ if (speedToggle) {
     updateSpeed(); // Inisialisasi awal
 }
 
+
 function animate() {
     requestAnimationFrame(animate);
 
