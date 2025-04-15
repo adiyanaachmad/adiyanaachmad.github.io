@@ -136,6 +136,21 @@ function loadModel(objName) {
 
     loader.load(`assets/models/${objName}/scene.gltf`, function (gltf) {
         object = gltf.scene;
+        // Deteksi dan ubah material kaca
+        object.traverse(child => {
+            if (child.isMesh && child.name.toLowerCase().includes("glass")) {
+                child.material.transparent = true;
+                child.material.opacity = 0.25;
+                child.material.metalness = 0;
+                child.material.roughness = 0;
+                child.material.envMapIntensity = 1;
+                child.material.refractionRatio = 0.98;
+                child.material.side = THREE.DoubleSide;
+
+                // Tambahkan warna jika diperlukan
+                child.material.color = new THREE.Color(0x88ccee);
+            }
+        });
         object.scale.set(12, 12, 12); // Bisa disesuaikan
 
         // Reset posisi awal
@@ -154,26 +169,26 @@ function loadModel(objName) {
 
         setTimeout(() => {
             scene.add(object);
-        
+
             // Atur kamera agar pas dan tetap melihat ke tengah objek
             const maxDim = Math.max(size.x, size.y, size.z);
             const cameraZ = maxDim * 0.7;
             camera.position.set(center.x + cameraZ, center.y + cameraZ, center.z + cameraZ);
             camera.lookAt(center);
-        
+
             controls.target.copy(center);
             controls.update();
-        
+
             // Tampilkan statistik mesh
             const detailContainers = document.querySelectorAll(".view__detail_3d");
             if (detailContainers.length >= 2) {
                 detailContainers[0].querySelector(".title h5").innerText = "Triangle";
                 detailContainers[0].querySelector(".indicator .angka").innerText = Math.floor(totalTriangles).toLocaleString();
-        
+
                 detailContainers[1].querySelector(".title h5").innerText = "Vertices";
                 detailContainers[1].querySelector(".indicator .angka").innerText = totalVertices.toLocaleString();
             }
-        
+
             hideLoader();
         }, 7000); // 10 detik
 
