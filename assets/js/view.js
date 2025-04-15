@@ -60,6 +60,7 @@ function createRenderer() {
 createRenderer();
 
 const gridHelper = new THREE.GridHelper(200, 50);
+
 gridHelper.position.y = 0;
 scene.add(gridHelper);
 gridHelper.visible = isGridHelperOn;
