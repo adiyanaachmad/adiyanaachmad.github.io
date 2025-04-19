@@ -145,15 +145,24 @@ function loadModel(objName) {
         object.traverse(child => {
             if (child.isMesh && child.name.toLowerCase().includes("glass")) {
                 child.material.transparent = true;
-                child.material.opacity = 0.25;
-                child.material.metalness = 0;
-                child.material.roughness = 0;
-                child.material.envMapIntensity = 1;
+                child.material.opacity = 0.6; // sebelumnya 0.25 → naikkan
+                child.material.color = new THREE.Color(0xaadfff); // lebih terang
+                child.material.metalness = 0.1; // biar tetap reflektif, tapi tidak mati
+                child.material.roughness = 0.05; // biar refleksi halus
+                child.material.envMapIntensity = 2; // jika kamu punya envMap
                 child.material.refractionRatio = 0.98;
                 child.material.side = THREE.DoubleSide;
 
-                // Tambahkan warna jika diperlukan
-                child.material.color = new THREE.Color(0x88ccee);
+                child.material = new THREE.MeshPhysicalMaterial({
+                    color: 0xaadfff,
+                    transmission: 1.0, // kaca
+                    transparent: true,
+                    opacity: 0.6,
+                    metalness: 0,
+                    roughness: 0,
+                    thickness: 0.5,
+                    envMapIntensity: 1.5
+                });
             }
         });
         object.scale.set(12, 12, 12); // Bisa disesuaikan
