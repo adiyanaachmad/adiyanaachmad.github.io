@@ -16,6 +16,8 @@ let animationIndex = 0;
 
 let animationSpeed = 0.5;
 
+let isShadowOn = false;
+
 function showLoader() {
     const loader = document.getElementById("wifi-loader");
     if (loader) loader.style.display = "flex";
@@ -42,6 +44,8 @@ function createRenderer() {
     }
 
     renderer = new THREE.WebGLRenderer({ alpha: true, antialias: isAntialiasingOn });
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.getElementById("container3D").appendChild(renderer.domElement);
 
@@ -171,6 +175,26 @@ function loadModel(objName) {
         setTimeout(() => {
             scene.add(object);
 
+            // Matikan shadow setiap kali model baru dimuat
+            isShadowOn = false;
+            directionalLight.castShadow = false;
+
+
+            if (object) {
+                object.traverse(child => {
+                    if (child.isMesh) {
+                        child.castShadow = false;
+                        child.receiveShadow = false;
+                    }
+                });
+            }
+
+            // Sinkronisasi UI toggle
+            const shadowCheckbox = document.getElementById("toggle-shadow");
+            const shadowStatus = document.querySelector(".init__3d.shadow .status h3");
+            if (shadowCheckbox) shadowCheckbox.checked = false;
+            if (shadowStatus) shadowStatus.innerText = "OFF";
+
             // Atur kamera agar pas dan tetap melihat ke tengah objek
             const maxDim = Math.max(size.x, size.y, size.z);
             const cameraZ = maxDim * 0.7;
@@ -211,6 +235,13 @@ function loadModel(objName) {
                 } else if (geom.attributes.position) {
                     totalTriangles += geom.attributes.position.count / 3;
                 }
+                if (child.isMesh) {
+                    child.castShadow = isShadowOn;
+                    child.receiveShadow = isShadowOn;
+                }
+                if (child.isMesh && child.name.toLowerCase().includes("glass")) {
+                    // pengaturan material kaca yang sudah kamu punya...
+                }
             }
         });
 
@@ -233,9 +264,19 @@ let ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
 scene.add(ambientLight);
 
 let directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-directionalLight.position.set(100, 200, 100);
+directionalLight.position.set(100, 150, 100);
 directionalLight.castShadow = true;
 scene.add(directionalLight);
+
+directionalLight.shadow.mapSize.width = 2048;
+directionalLight.shadow.mapSize.height = 2048;
+directionalLight.shadow.bias = -0.005; 
+directionalLight.shadow.camera.near = 1;
+directionalLight.shadow.camera.far = 500;
+directionalLight.shadow.camera.left = -100;
+directionalLight.shadow.camera.right = 100;
+directionalLight.shadow.camera.top = 100;
+directionalLight.shadow.camera.bottom = -100;
 
 let backLight = new THREE.DirectionalLight(0xffffff, 0.4);
 backLight.position.set(-100, 100, -100);
@@ -278,6 +319,23 @@ function toggleGridHelper() {
     gridHelper.visible = isGridHelperOn;
     document.querySelector(".init__3d.gride .status h3").innerText = isGridHelperOn ? "ON" : "OFF";
 }
+
+function toggleShadow() {
+    const shadowStatus = document.querySelector(".init__3d.shadow .status h3");
+    if (shadowStatus) shadowStatus.innerText = isShadowOn ? "ON" : "OFF";
+
+    if (object) {
+        object.traverse(child => {
+            if (child.isMesh) {
+                child.castShadow = isShadowOn;
+                child.receiveShadow = isShadowOn;
+            }
+        });
+    }
+
+    directionalLight.castShadow = isShadowOn;
+}
+
 
 const antialiasCheckbox = document.getElementById("toggle-antialias");
 const gridCheckbox = document.getElementById("toggle-grid");
@@ -456,3 +514,14 @@ dropdowns.forEach(dropdown => {
         }
     });
 });
+
+const shadowCheckbox = document.getElementById("toggle-shadow");
+
+if (shadowCheckbox) {
+    shadowCheckbox.addEventListener("change", () => {
+        isShadowOn = shadowCheckbox.checked;
+        toggleShadow();
+    });
+
+    shadowCheckbox.checked = isShadowOn;
+}
