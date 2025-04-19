@@ -1,6 +1,7 @@
 import * as THREE from "https://cdn.skypack.dev/three@0.129.0/build/three.module.js";
 import { OrbitControls } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/controls/OrbitControls.js";
 import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js";
+import { RGBELoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/RGBELoader.js";
 
 let isAntialiasingOn = false;
 let isGridHelperOn = true;
@@ -17,6 +18,35 @@ let animationIndex = 0;
 let animationSpeed = 0.5;
 
 let isShadowOn = false;
+
+let isReflectionOn = false;
+
+const reflectionCheckbox = document.getElementById("toggle-reflection");
+const reflectionStatus = document.querySelector(".init__3d.reflection .status h3");
+
+// Listener saat checkbox diklik
+if (reflectionCheckbox) {
+    reflectionCheckbox.addEventListener("change", () => {
+        isReflectionOn = reflectionCheckbox.checked;
+        applyReflection();
+        if (reflectionStatus) reflectionStatus.innerText = isReflectionOn ? "ON" : "OFF";
+    });
+
+    // Default OFF saat pertama kali dimuat
+    reflectionCheckbox.checked = false;
+    if (reflectionStatus) reflectionStatus.innerText = "OFF";
+}
+
+const rgbeLoader = new RGBELoader();
+rgbeLoader.load('assets/hdr/paul_lobe_haus_4k.hdr', function (texture) {
+  texture.mapping = THREE.EquirectangularReflectionMapping;
+
+  scene.environment = texture;    // untuk refleksi material
+//   scene.background = texture;     // kalau ingin latar belakang juga HDRI (bisa dihapus kalau mau tetap transparan)
+
+}, undefined, function (err) {
+  console.error('Gagal memuat HDRI:', err);
+});
 
 function showLoader() {
     const loader = document.getElementById("wifi-loader");
@@ -184,6 +214,8 @@ function loadModel(objName) {
         setTimeout(() => {
             scene.add(object);
 
+            applyReflection();
+            
             // Matikan shadow setiap kali model baru dimuat
             isShadowOn = false;
             directionalLight.castShadow = false;
@@ -249,7 +281,7 @@ function loadModel(objName) {
                     child.receiveShadow = isShadowOn;
                 }
                 if (child.isMesh && child.name.toLowerCase().includes("glass")) {
-                    // pengaturan material kaca yang sudah kamu punya...
+
                 }
             }
         });
@@ -343,6 +375,23 @@ function toggleShadow() {
     }
 
     directionalLight.castShadow = isShadowOn;
+}
+
+function applyReflection() {
+    if (!object) return;
+    object.traverse(child => {
+        if (child.isMesh && child.material) {
+            if (Array.isArray(child.material)) {
+                child.material.forEach(mat => {
+                    mat.envMapIntensity = isReflectionOn ? 1.5 : 0.0;
+                    mat.needsUpdate = true;
+                });
+            } else {
+                child.material.envMapIntensity = isReflectionOn ? 1.5 : 0.0;
+                child.material.needsUpdate = true;
+            }
+        }
+    });
 }
 
 
