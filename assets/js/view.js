@@ -93,7 +93,7 @@ function createRenderer() {
 }
 createRenderer();
 
-const gridHelper = new THREE.GridHelper(200, 50);
+const gridHelper = new THREE.GridHelper(200, 10);
 
 gridHelper.position.y = 0;
 scene.add(gridHelper);
@@ -215,7 +215,7 @@ function loadModel(objName) {
             scene.add(object);
 
             applyReflection();
-            
+
             // Matikan shadow setiap kali model baru dimuat
             isShadowOn = false;
             directionalLight.castShadow = false;
